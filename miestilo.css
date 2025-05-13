@@ -123,3 +123,9 @@ h5{
     margin: 0; 
     display: inline-block; 
 }
+
+/*ESTILOS DEL CARRUSEL*/
+.carrusel{
+    width: 50%;
+    margin: auto;
+}
