@@ -56,9 +56,10 @@ footer {
 }
 
 nav {
-    background-color: #4caf50;
-    padding: 10px;
-    }
+    padding: 20px;
+    font-family: "Bebas Neue", sans-serif;
+    font-size: large;
+}
 
 nav ul {
     list-style: none;
@@ -78,9 +79,7 @@ nav ul li a {
     text-decoration: none;
     border-radius: 5px;
 }
-nav ul li a:hover {
-    background-color: red;
-}
+
 
 img {
     display: block;
@@ -130,4 +129,35 @@ h5{
 
 .nav-link{
     background-color:rebeccapurple;
+}
+
+.nav-link{
+    display: flex;
+}
+
+.nav-item {
+    position: relative; /* Asegúrate de que el contenedor tenga posición relativa */
+}
+
+.hover {
+    background-color: red; /* Color de la línea de hover */
+    height: 2px; /* Altura de la línea */
+    width: 100%; /* Ancho completo */
+    position: absolute; /* Posiciona el hover en relación a su contenedor */
+    bottom: 0; /* Coloca la línea en la parte inferior */
+    left: 0; /* Alinea a la izquierda */
+    transform: scaleX(0); /* Inicia oculto */
+    transition: transform 0.3s ease; /* Transición suave */
+}
+
+.nav-item:hover .hover {
+    transform: scaleX(1); /* Muestra la línea al hacer hover */
+}
+
+.nav-link {
+    color: gray !important; /* Color del texto */
+}
+
+.nav-item:hover .nav-link {
+    color: white !important; /* Cambia el color del texto al hacer hover, si lo deseas */
 }
