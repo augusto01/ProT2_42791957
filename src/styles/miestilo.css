@@ -170,7 +170,11 @@ h5{
     background-position: center; /* Centra la imagen en el contenedor */
     height: 100vh; /* Asegura que el contenedor ocupe toda la altura de la ventana */
     width: 100%; /* Asegura que el contenedor ocupe todo el ancho */
+<<<<<<< HEAD
     background-image: url('/proyecto_td/resources/cartelera.jpg');
+=======
+    background-image: url(/resources/cartelera.jpg);
+>>>>>>> ce29c790fcab5e751793de6fc92805458b8a4fdf
 }
 
 .pretitulo-cartelera{
