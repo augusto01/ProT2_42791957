@@ -1,0 +1,119 @@
+body {
+    background-color: #111; /* Fondo oscuro */
+    font-family: "Bebas Neue", sans-serif;
+    color: #fff; /* Texto blanco por defecto */
+    margin: 0;
+    padding: 0;
+}
+
+.container-form {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 30px;
+    background-color: #1a1a1a; /* Fondo oscuro del formulario */
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(255, 0, 0, 0.4); /* Sombra roja intensa */
+    border: 2px solid red;
+    animation: pulse 1.5s infinite alternate;
+}
+
+@keyframes pulse {
+    from {
+        box-shadow: 0 0 10px red;
+    }
+    to {
+        box-shadow: 0 0 25px red;
+    }
+}
+
+h1 {
+    margin-bottom: 25px;
+    color: red;
+    font-size: 36px;
+    text-align: center;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px black;
+}
+
+.form-label {
+    font-weight: bold;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+.form-control {
+    border: none !important;
+    border-bottom: 3px solid #555 !important;
+    background-color: #222 !important;
+    color: #fff !important;
+    border-radius: 0 !important;
+    outline: none;
+    box-shadow: none !important;
+    transition: all 0.3s ease;
+    padding: 10px;
+}
+
+.form-control:focus {
+    background-color: #000 !important;
+    border-bottom: 3px solid red !important;
+    color: white !important;
+}
+.container-logo {
+    text-align: center; 
+    margin-bottom: 10px; /
+}
+
+.btn-primary {
+    background-color: red;
+    border: none;
+    width: 100%;
+    padding: 12px;
+    font-size: 18px;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 1px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-primary:hover {
+    background-color: darkred;
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
+.form-check-label {
+    margin-left: 5px;
+    color: #ccc;
+}
+
+
+.nav-link{
+    display: flex;
+}
+
+.nav-item {
+    position: relative; /* Asegúrate de que el contenedor tenga posición relativa */
+}
+
+.hover {
+    background-color: red; /* Color de la línea de hover */
+    height: 2px; /* Altura de la línea */
+    width: 100%; /* Ancho completo */
+    position: absolute; /* Posiciona el hover en relación a su contenedor */
+    bottom: 0; /* Coloca la línea en la parte inferior */
+    left: 0; /* Alinea a la izquierda */
+    transform: scaleX(0); /* Inicia oculto */
+    transition: transform 0.3s ease; /* Transición suave */
+}
+
+.nav-item:hover .hover {
+    transform: scaleX(1); /* Muestra la línea al hacer hover */
+}
+
+.nav-link {
+    color: gray !important; /* Color del texto */
+}
+
+.nav-item:hover .nav-link {
+    color: white !important; /* Cambia el color del texto al hacer hover, si lo deseas */
+}
