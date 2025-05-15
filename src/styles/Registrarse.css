@@ -1,0 +1,80 @@
+body {
+    background-color: #111;
+    font-family: "Bebas Neue", sans-serif;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+}
+
+.container-form {
+    max-width: 450px;
+    margin: 60px auto;
+    padding: 30px;
+    background-color: #1a1a1a;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(255, 0, 0, 0.5);
+    border: 2px solid red;
+    animation: pulse 1.5s infinite alternate;
+}
+
+@keyframes pulse {
+    from {
+        box-shadow: 0 0 10px red;
+    }
+    to {
+        box-shadow: 0 0 25px red;
+    }
+}
+
+h1 {
+    text-align: center;
+    font-size: 40px;
+    color: red;
+    text-shadow: 2px 2px black;
+    margin-bottom: 25px;
+}
+
+.form-label {
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #fff;
+}
+
+.form-control {
+    background-color: #222 !important;
+    border: none !important;
+    border-bottom: 3px solid #555 !important;
+    color: #fff !important;
+    border-radius: 0 !important;
+    outline: none;
+    box-shadow: none !important;
+    transition: all 0.3s ease;
+    padding: 12px;
+}
+
+.form-control:focus {
+    background-color: #000 !important;
+    border-bottom: 3px solid red !important;
+    color: #fff !important;
+}
+
+.btn-primary {
+    background-color: red;
+    border: none;
+    width: 100%;
+    padding: 12px;
+    font-size: 18px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-primary:hover {
+    background-color: darkred;
+    transform: scale(1.05);
+}
+
+.form-check-label {
+    color: #ccc;
+}
