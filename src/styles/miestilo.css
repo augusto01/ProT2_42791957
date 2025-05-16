@@ -1,6 +1,10 @@
 
 body {
+<<<<<<< HEAD
     background-color: #eaf2e3;
+=======
+    background-color: black;
+>>>>>>> master
     color: #333;
     font-family: Arial, sans-serif;
     margin: 0;
@@ -44,12 +48,20 @@ section {
     padding: 20px; 
 }
 footer {
+<<<<<<< HEAD
     background-color: #4caf50; 
+=======
+    background-color: black; 
+>>>>>>> master
     color: #fff;
     padding: 20px 0; 
 }
 
 .footer-content {
+<<<<<<< HEAD
+=======
+    background-color: black;
+>>>>>>> master
     max-width: 800px; 
     margin: 0 auto; 
     text-align: center; 
@@ -103,7 +115,11 @@ h5{
 
 .footer{
     padding: 3px;
+<<<<<<< HEAD
     background-color: #4caf50;;
+=======
+    background-color: black;
+>>>>>>> master
     text-align: center;
     font-weight: bold;
 }
@@ -165,6 +181,7 @@ h5{
 
 .content-cartelera {
     font-family: "Bebas Neue", sans-serif;
+<<<<<<< HEAD
     background-size: cover; /* Asegura que la imagen cubra todo el contenedor */
     background-repeat: no-repeat; /* Evita que la imagen se repita */
     background-position: center; /* Centra la imagen en el contenedor */
@@ -189,6 +206,42 @@ h5{
 
 }
 
+=======
+    background-size: cover; 
+    background-repeat: no-repeat; 
+    background-position: center; 
+    height: 100vh; 
+    width: 100%; 
+    background-image: url(../../resources/cartelera.jpg);
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center; 
+    text-align: center; 
+    color: white; 
+}
+
+.pretitulo-cartelera {
+    font-size: 2.5vw; /* Tamaño de fuente responsivo */
+    margin-top: 2rem; /* Espaciado superior */
+}
+
+.titulo-cartelera {
+    font-size: 5vw; /* Tamaño de fuente responsivo */
+    margin-top: 2rem; /* Espaciado superior */
+}
+
+.button-container {
+    margin-top: 2rem; /* Espaciado superior */
+}
+
+.btn {
+    font-size: 1.5rem; /* Tamaño de fuente de los botones */
+    padding: 0.5rem 1rem; /* Espaciado interno de los botones */
+}
+
+
+>>>>>>> master
 
 
 .image-container {
@@ -246,3 +299,46 @@ h5{
     color: whitesmoke !important;
     transform: scale(1.05); /* Un poco más grande para más agresividad */
 }
+<<<<<<< HEAD
+=======
+
+
+.carousel{
+    background-color: black;
+    margin: 0px;
+}
+
+.logo-footer {
+    width: 20%; /* Ajusta el ancho en porcentaje */
+    max-width: 150px; /* Tamaño máximo para pantallas grandes */
+    height: auto; /* Mantiene la proporción del logo */
+}
+
+.footer {
+    padding: 2rem 1rem; /* Espaciado responsivo */
+}
+
+.container-icons .icon {
+    width: 5vw; /* Tamaño responsivo para los íconos */
+    height: auto; /* Mantiene la proporción de los íconos */
+}
+
+
+@media (max-width: 768px) {
+    .pretitulo-cartelera {
+        font-size: 4vw; /* Ajuste para pantallas más pequeñas */
+    }
+    .titulo-cartelera {
+        font-size: 8vw; /* Ajuste para pantallas más pequeñas */
+    }
+}
+
+@media (max-width: 480px) {
+    .pretitulo-cartelera {
+        font-size: 5vw; /* Ajuste para pantallas muy pequeñas */
+    }
+    .titulo-cartelera {
+        font-size: 10vw; /* Ajuste para pantallas muy pequeñas */
+    }
+}
+>>>>>>> master
