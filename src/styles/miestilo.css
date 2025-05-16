@@ -1,10 +1,6 @@
 
 body {
-<<<<<<< HEAD
-    background-color: #eaf2e3;
-=======
     background-color: black;
->>>>>>> master
     color: #333;
     font-family: Arial, sans-serif;
     margin: 0;
@@ -48,20 +44,13 @@ section {
     padding: 20px; 
 }
 footer {
-<<<<<<< HEAD
-    background-color: #4caf50; 
-=======
     background-color: black; 
->>>>>>> master
     color: #fff;
     padding: 20px 0; 
 }
 
 .footer-content {
-<<<<<<< HEAD
-=======
     background-color: black;
->>>>>>> master
     max-width: 800px; 
     margin: 0 auto; 
     text-align: center; 
@@ -115,11 +104,7 @@ h5{
 
 .footer{
     padding: 3px;
-<<<<<<< HEAD
-    background-color: #4caf50;;
-=======
     background-color: black;
->>>>>>> master
     text-align: center;
     font-weight: bold;
 }
@@ -181,32 +166,6 @@ h5{
 
 .content-cartelera {
     font-family: "Bebas Neue", sans-serif;
-<<<<<<< HEAD
-    background-size: cover; /* Asegura que la imagen cubra todo el contenedor */
-    background-repeat: no-repeat; /* Evita que la imagen se repita */
-    background-position: center; /* Centra la imagen en el contenedor */
-    height: 100vh; /* Asegura que el contenedor ocupe toda la altura de la ventana */
-    width: 100%; /* Asegura que el contenedor ocupe todo el ancho */
-    background-image: url('/proyecto_td/resources/cartelera.jpg');
-}
-
-.pretitulo-cartelera{
-    font-size: 2rem; /* Tamaño grande */
-    color: whitesmoke; /* Color rojo para un efecto dramático */
-    text-align: center; /* Centrar el texto */
-    margin-bottom: 400px;
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Sombra para resaltar el texto */
-
-}
-.titulo-cartelera {
-    font-size: 8rem; /* Tamaño grande */
-    color: whitesmoke; /* Color rojo para un efecto dramático */
-    text-align: center; /* Centrar el texto */
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Sombra para resaltar el texto */
-
-}
-
-=======
     background-size: cover; 
     background-repeat: no-repeat; 
     background-position: center; 
@@ -241,7 +200,6 @@ h5{
 }
 
 
->>>>>>> master
 
 
 .image-container {
@@ -299,8 +257,6 @@ h5{
     color: whitesmoke !important;
     transform: scale(1.05); /* Un poco más grande para más agresividad */
 }
-<<<<<<< HEAD
-=======
 
 
 .carousel{
@@ -341,4 +297,3 @@ h5{
         font-size: 10vw; /* Ajuste para pantallas muy pequeñas */
     }
 }
->>>>>>> master
