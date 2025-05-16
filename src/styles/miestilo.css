@@ -1,6 +1,6 @@
 
 body {
-    background-color: #eaf2e3;
+    background-color: black;
     color: #333;
     font-family: Arial, sans-serif;
     margin: 0;
@@ -44,12 +44,13 @@ section {
     padding: 20px; 
 }
 footer {
-    background-color: #4caf50; 
+    background-color: black; 
     color: #fff;
     padding: 20px 0; 
 }
 
 .footer-content {
+    background-color: black;
     max-width: 800px; 
     margin: 0 auto; 
     text-align: center; 
@@ -103,7 +104,7 @@ h5{
 
 .footer{
     padding: 3px;
-    background-color: #4caf50;;
+    background-color: black;
     text-align: center;
     font-weight: bold;
 }
@@ -255,6 +256,27 @@ h5{
 .btn:hover {
     color: whitesmoke !important;
     transform: scale(1.05); /* Un poco más grande para más agresividad */
+}
+
+
+.carousel{
+    background-color: black;
+    margin: 0px;
+}
+
+.logo-footer {
+    width: 20%; /* Ajusta el ancho en porcentaje */
+    max-width: 150px; /* Tamaño máximo para pantallas grandes */
+    height: auto; /* Mantiene la proporción del logo */
+}
+
+.footer {
+    padding: 2rem 1rem; /* Espaciado responsivo */
+}
+
+.container-icons .icon {
+    width: 5vw; /* Tamaño responsivo para los íconos */
+    height: auto; /* Mantiene la proporción de los íconos */
 }
 
 
