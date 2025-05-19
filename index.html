@@ -16,51 +16,52 @@
 </head>
 
 <body>
-    <header class="text-center py-3">
-        <div class="logo">
-            <a href="index.html">
-                <img src="./resources/Logo-UFC.png" alt="Descripción de la imagen" class="img-fluid">
-            </a>
-        </div>
-    </header>
+   
     
     <!-- NAVBAR DE BOOTSTRAP -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container-fluid">
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="#">Peleadores</a>
-                        <div class="hover"></div>
-
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="#">Rankings</a>
-                        <div class="hover"></div>
-
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Eventos</a>
-                        <div class="hover"></div>
-
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Quienes Somos</a>
-                        <div class="hover"></div>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="src/pages/Login.html">Iniciar Sesion</a>
-                        <div class="hover"></div>
-                    </li>
-                </ul>
-                
-            </div>
+   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+        <!-- Logo visible en móviles (centrado) -->
+        <div class="d-flex justify-content-center w-100 d-lg-none">
+            <a class="navbar-brand logo-ufc" href="#">
+                <img src="resources/Logo-UFC.png" alt="Logo UFC" height="50">
+            </a>
         </div>
-    </nav>
-
+        
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link" aria-current="page" href="#">Peleadores</a>
+                    <div class="hover"></div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" aria-current="page" href="#">Rankings</a>
+                    <div class="hover"></div>
+                </li>
+            </ul>
+            
+            <!-- Logo visible en pantallas grandes (se oculta en móviles) -->
+            <a class="navbar-brand mx-auto logo-ufc d-none d-lg-block" href="#">
+                <img src="resources/Logo-UFC.png" alt="Logo UFC" height="50">
+            </a>
+            
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Quienes Somos</a>
+                    <div class="hover"></div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="src/pages/Login.html">Iniciar Sesion</a>
+                    <div class="hover"></div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
     
     <section class="content-cartelera">
         <h6 class="pretitulo-cartelera text-center mt-5">Pelea por el título del peso ligero</h6>
