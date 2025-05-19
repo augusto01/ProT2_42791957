@@ -35,7 +35,7 @@ body {
 
 
 header {
-    background-color: black;
+    background-color: black !important;
     color: #fff;
     text-align: center;
     padding: 20px;
@@ -90,6 +90,10 @@ nav ul li a {
     transform: scale(1.05);
     filter: brightness(0) invert(1) sepia(100%) saturate(10000%) hue-rotate(0deg);
     /* Esto producirá un rojo intenso */
+}
+
+.navbar{
+    background-color: black !important;
 }
 
 /* Estructura responsive */
@@ -166,29 +170,32 @@ h5{
     background-color:rebeccapurple;
 }
 
-.nav-link{
-    display: flex;
+.bg-dark{ 
+    background-color: black !important;
 }
 
 .nav-item {
-    position: relative; /* Asegúrate de que el contenedor tenga posición relativa */
+    position: relative;
 }
 
 .hover {
-    background-color: red; /* Color de la línea de hover */
-    height: 2px; /* Altura de la línea */
-    width: 100%; /* Ancho completo */
-    position: absolute; /* Posiciona el hover en relación a su contenedor */
-    bottom: 0; /* Coloca la línea en la parte inferior */
-    left: 0; /* Alinea a la izquierda */
-    transform: scaleX(0); /* Inicia oculto */
-    transition: transform 0.3s ease; /* Transición suave */
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: red;
+    transition: width 0.3s ease;
 }
 
 .nav-item:hover .hover {
-    transform: scaleX(1); /* Muestra la línea al hacer hover */
+    width: 100%;
 }
 
+/* Asegúrate que el logo no tenga padding que afecte el hover */
+.navbar-brand.logo-ufc {
+    padding-bottom: 5px; /* Espacio para la línea */
+}
 .nav-link {
     color: gray !important; /* Color del texto */
 }
