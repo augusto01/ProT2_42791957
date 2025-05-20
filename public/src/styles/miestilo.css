@@ -44,7 +44,7 @@ section {
     padding: 20px; 
 }
 footer {
-    background-color: black; 
+    background-color: rgb(0, 0, 0); 
     color: #fff;
     padding: 20px 0; 
 }
@@ -81,15 +81,24 @@ nav ul li a {
     border-radius: 5px;
 }
 
- .logo-ufc img {
+/* ESTILOS DEFINITIVOS PARA EL LOGO UFC */
+.logo-ufc img {
     transition: all 0.3s ease;
-    filter: brightness(0) invert(1); /* Convierte el logo a blanco (si es negro) */
+    height: 50px; /* Asegura altura consistente */
 }
 
 .logo-ufc:hover img {
-    transform: scale(1.05);
-    filter: brightness(0) invert(1) sepia(100%) saturate(10000%) hue-rotate(0deg);
-    /* Esto producirá un rojo intenso */
+    filter: 
+        brightness(0) 
+        invert(16%) 
+        sepia(100%) 
+        saturate(1000%) 
+        hue-rotate(320deg);
+}
+
+/* Elimina cualquier filtro inicial que pueda interferir */
+.navbar-brand.logo-ufc img {
+    filter: none !important;
 }
 
 .navbar{

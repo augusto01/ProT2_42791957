@@ -95,14 +95,6 @@ h1 {
     position: relative; /* Asegúrate de que el contenedor tenga posición relativa */
 }
 
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-/* HOVER DE LOS BOTONES */
-
-=======
->>>>>>> ce29c790fcab5e751793de6fc92805458b8a4fdf
->>>>>>> master
 .hover {
     background-color: red; /* Color de la línea de hover */
     height: 2px; /* Altura de la línea */
