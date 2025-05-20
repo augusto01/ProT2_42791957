@@ -1,6 +1,7 @@
 body {
     background-color: #111; /* Fondo oscuro */
     font-family: "Bebas Neue", sans-serif;
+    font-size: large;
     color: #fff; /* Texto blanco por defecto */
     margin: 0;
     padding: 0;
@@ -96,14 +97,14 @@ h1 {
 }
 
 .hover {
-    background-color: red; /* Color de la línea de hover */
-    height: 2px; /* Altura de la línea */
-    width: 100%; /* Ancho completo */
-    position: absolute; /* Posiciona el hover en relación a su contenedor */
-    bottom: 0; /* Coloca la línea en la parte inferior */
-    left: 0; /* Alinea a la izquierda */
-    transform: scaleX(0); /* Inicia oculto */
-    transition: transform 0.3s ease; /* Transición suave */
+    background-color: red; 
+    height: 2px; 
+    width: 100%; 
+    position: absolute; 
+    bottom: 0;
+    left: 0; 
+    transform: scaleX(0); 
+    transition: transform 0.3s ease; 
 }
 
 .nav-item:hover .hover {
@@ -117,3 +118,39 @@ h1 {
 .nav-item:hover .nav-link {
     color: white !important; /* Cambia el color del texto al hacer hover, si lo deseas */
 }
+
+
+/*ALERTAS PARA EL CSS*/
+#alertas .alerta-error {
+            background-color: #ffebee !important;
+            color: #c62828 !important;
+            border-left: 4px solid #c62828 !important;
+            padding: 12px 20px !important;
+            margin-bottom: 15px !important;
+            border-radius: 4px !important;
+            font-weight: bold !important;
+            display: block !important;
+            animation: fadeInSlide 0.3s ease-out forwards !important;
+            box-shadow: 0 2px 4px rgba(198, 40, 40, 0.2) !important;
+            font-family: 'Bebas Neue', sans-serif !important;
+        }
+
+        #alertas .alerta-exito {
+            background-color: #e8f5e9 !important;
+            color: #2e7d32 !important;
+            border-left: 4px solid #2e7d32 !important;
+            padding: 12px 20px !important;
+            margin-bottom: 15px !important;
+            border-radius: 4px !important;
+            font-weight: bold !important;
+            display: block !important;
+            animation: fadeInSlide 0.3s ease-out forwards !important;
+            box-shadow: 0 2px 4px rgba(46, 125, 50, 0.2) !important;
+            font-family: 'Bebas Neue', sans-serif !important;
+        }
+
+        @keyframes fadeInSlide {
+            0% { opacity: 0; transform: translateY(-15px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
