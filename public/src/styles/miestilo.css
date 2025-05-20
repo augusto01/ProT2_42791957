@@ -292,7 +292,7 @@ h5{
 }
 
 .logo-footer {
-    width: 20%; /* Ajusta el ancho en porcentaje */
+    width: 100%; /* Ajusta el ancho en porcentaje */
     max-width: 150px; /* Tamaño máximo para pantallas grandes */
     height: auto; /* Mantiene la proporción del logo */
 }
