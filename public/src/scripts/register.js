@@ -1,3 +1,4 @@
+//REGISTRAR USUARIO 
 document.getElementById("registro-form").addEventListener("submit", async (e) => {
   e.preventDefault();
   limpiarAlertas();

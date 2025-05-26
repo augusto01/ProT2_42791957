@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiénes Somos - UFC</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
+    <link rel="stylesheet" href="../styles/miestilo.css">
+        <link rel="stylesheet" href="../styles/QuienesSomos.css">
+
+    
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <!-- Logo visible en móviles (centrado) -->
+            <div class="d-flex justify-content-center w-100 d-lg-none">
+                <div class="nav-item">
+                <a class="navbar-brand logo-ufc" href="#">
+                    <img src="resources/Logo-UFC.png" alt="Logo UFC" height="50">
+                </a>
+                <div class="hover"></div>
+            </div>
+
+            </div>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="#">Peleadores</a>
+                        <div class="hover"></div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="#">Rankings</a>
+                        <div class="hover"></div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="#">Eventos</a>
+                        <div class="hover"></div>
+                    </li>
+                </ul>
+                
+                <!-- Logo visible en pantallas grandes (se oculta en móviles) -->
+                <div class="nav-item">
+                    <a class="navbar-brand mx-auto logo-ufc d-none d-lg-block" href="#">
+                        <img src="../../resources/Logo-UFC.png" alt="Logo UFC" height="50">
+                    </a>
+                    <div class="hover"></div>
+                </div>
+                
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="src/pages/QuienesSomos.html">Quienes Somos</a>
+                        <div class="hover"></div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Acerca de</a>
+                        <div class="hover"></div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="src/pages/Login.html">Iniciar Sesion</a>
+                        <div class="hover"></div>
+                    </li>
+                   <li class="nav-item">
+                        <a class="nav-link" href="#" id="searchIcon" data-toggle="collapse" data-target="#searchInput" aria-expanded="false" aria-controls="searchInput">
+                            <i class="bi bi-search"></i> <!-- Ícono de búsqueda -->
+                        </a>
+                        <div class="text-center" id="searchInput">
+                            <input type="text" class="form-control" placeholder="Buscar..." aria-label="Buscar">
+                        </div>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+
+    <header class="hero">
+        <h1>Quiénes Somos</h1>
+    </header>
+
+    <div class="container mt-5">
+        <h2>Acerca de la UFC</h2>
+        <p>
+            La Ultimate Fighting Championship (UFC) es la organización de artes marciales mixtas más grande y reconocida del mundo. Fundada en 1993, la UFC ha revolucionado el deporte al ofrecer un formato emocionante y competitivo que atrae a millones de fanáticos en todo el planeta.
+        </p>
+
+        <h3>Nuestra Misión</h3>
+        <p>
+            La misión de la UFC es proporcionar la plataforma más emocionante y de alta calidad para las artes marciales mixtas, promoviendo a los mejores luchadores y ofreciendo eventos de primera clase a nuestros fanáticos.
+        </p>
+
+        <h3>Nuestra Historia</h3>
+        <p>
+            Desde su creación, la UFC ha crecido exponencialmente, comenzando como un evento de lucha sin reglas y evolucionando hacia un deporte regulado con atletas altamente entrenados. Con eventos en todo el mundo, la UFC ha establecido un legado de excelencia y competencia.
+        </p>
+
+        <h3>Valores Fundamentales</h3>
+        <ul>
+            <li><strong>Respeto:</strong> Fomentamos un ambiente de respeto entre los luchadores, el equipo y los fanáticos.</li>
+            <li><strong>Integridad:</strong> Operamos con honestidad y transparencia en todas nuestras acciones.</li>
+            <li><strong>Excelencia:</strong> Nos esforzamos por ser los mejores en lo que hacemos, desde la producción de eventos hasta la promoción de nuestros atletas.</li>
+        </ul>
+
+        <h3>Únete a Nosotros</h3>
+        <p>
+            Si eres un apasionado de las artes marciales mixtas, te invitamos a unirte a nuestra comunidad. Ya sea como fanático, luchador o parte de nuestro equipo, hay un lugar para ti en la UFC.
+        </p>
+    </div>
+
+    <footer class="text-center mt-5 mb-3">
+        <p>&copy; 2025 UFC. Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.min.js" integrity="sha384-WF6g6F3R8U3a5fV5n+3xW6X1gZPOkU6D6wZ2q9B5y1U4g3z3Z9I1N9fM0pZ8zE6" crossorigin="anonymous"></script>
+</body>
+</html>
