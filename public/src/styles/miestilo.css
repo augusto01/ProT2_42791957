@@ -105,6 +105,13 @@ nav ul li a {
     background-color: black !important;
 }
 
+#searchInput {
+    position: absolute;
+    right: 10px; /* Ajusta la posición según sea necesario */
+    z-index: 1000; /* Asegúrate de que esté por encima de otros elementos */
+}
+
+
 
 
 img {

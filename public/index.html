@@ -12,6 +12,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Fira+Code:wght@300..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
 
     <!-- ENLACE CON LA HOJA DE ESTILOS -->
     <link rel="stylesheet" href="src/styles/miestilo.css">
@@ -76,6 +77,15 @@
                         <a class="nav-link" href="src/pages/Login.html">Iniciar Sesion</a>
                         <div class="hover"></div>
                     </li>
+                   <li class="nav-item">
+                        <a class="nav-link" href="#" id="searchIcon" data-toggle="collapse" data-target="#searchInput" aria-expanded="false" aria-controls="searchInput">
+                            <i class="bi bi-search"></i> <!-- Ícono de búsqueda -->
+                        </a>
+                        <div class="text-center" id="searchInput">
+                            <input type="text" class="form-control" placeholder="Buscar..." aria-label="Buscar">
+                        </div>
+                    </li>
+
                 </ul>
             </div>
         </div>
@@ -257,6 +267,10 @@
 
 
     <!-- Scripts de Bootstrap -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.min.js" integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous"></script>
 
 </body>
