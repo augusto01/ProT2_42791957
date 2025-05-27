@@ -1,6 +1,6 @@
 /* Estilos generales */
 body {
-    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-family: "Bebas Neue", sans-serif;
     background-color: #111;
     color: #fff;
     margin: 0;
@@ -11,7 +11,7 @@ body {
 /* Hero Section */
 .ufc-hero {
     background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
-                url('../resources/ufc-rankings-hero.jpg') no-repeat center center;
+                url('../../resources/octagon-ufc.avif') no-repeat center center;
     background-size: cover;
     height: 50vh;
     display: flex;
