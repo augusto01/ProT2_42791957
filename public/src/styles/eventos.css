@@ -1,0 +1,298 @@
+/* Estilos generales */
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    background-color: #111;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+/* Hero Section */
+.ufc-hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+                url('../../resources/octagon-ufc.avif') no-repeat center center;
+    background-size: cover;
+    height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    margin-bottom: 50px;
+}
+
+.ufc-main-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 5rem;
+    color: #fff;
+    text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.8);
+    letter-spacing: 3px;
+    margin-bottom: 20px;
+    animation: pulse 2s infinite alternate;
+}
+
+.ufc-subtitle {
+    font-size: 1.5rem;
+    color: #d20a0a;
+    font-weight: bold;
+}
+
+@keyframes pulse {
+    from {
+        text-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
+    }
+    to {
+        text-shadow: 0 0 20px rgba(255, 0, 0, 0.8), 
+                     0 0 30px rgba(255, 0, 0, 0.6);
+    }
+}
+
+/* Títulos de sección */
+.section-title {
+    font-family: 'Bebas Neue', sans-serif;
+    color: #d20a0a;
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    border-bottom: 2px solid #d20a0a;
+    padding-bottom: 10px;
+}
+
+/* Tarjetas de eventos */
+.ufc-event-card {
+    background-color: #1a1a1a;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+    display: flex;
+    height: 100%;
+}
+
+.ufc-event-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(210, 10, 10, 0.3);
+}
+
+.featured {
+    border-left: 5px solid #d20a0a;
+}
+
+.event-date {
+    background-color: #000;
+    color: #fff;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-width: 90px;
+}
+
+.date-day {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2.5rem;
+    line-height: 1;
+    color: #d20a0a;
+}
+
+.date-month, .date-year {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+}
+
+.event-info {
+    padding: 20px;
+    flex-grow: 1;
+}
+
+.event-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.8rem;
+    color: #fff;
+    margin-bottom: 15px;
+}
+
+.event-location {
+    color: #aaa;
+    margin-bottom: 20px;
+    font-size: 0.9rem;
+}
+
+.main-event {
+    margin-bottom: 20px;
+}
+
+.fighters {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.fighter {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 45%;
+}
+
+.fighter-img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #d20a0a;
+    margin-bottom: 10px;
+}
+
+.fighter-name {
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+.fighter-record {
+    color: #d20a0a;
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+.vs-badge {
+    background-color: #d20a0a;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 50%;
+    font-weight: bold;
+    font-family: 'Bebas Neue', sans-serif;
+}
+
+/* Tabla de eventos */
+.ufc-events-table {
+    background-color: #1a1a1a;
+    color: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.ufc-events-table thead th {
+    background-color: #000;
+    color: #d20a0a;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+    border-bottom: 2px solid #d20a0a;
+}
+
+.ufc-events-table tbody tr {
+    transition: all 0.3s ease;
+}
+
+.ufc-events-table tbody tr:hover {
+    background-color: #222;
+}
+
+.ufc-events-table td {
+    vertical-align: middle;
+}
+
+/* Botones UFC */
+.btn-ufc {
+    background-color: #d20a0a;
+    color: white;
+    border: none;
+    font-family: 'Bebas Neue', sans-serif;
+    letter-spacing: 1px;
+    padding: 8px 20px;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+}
+
+.btn-ufc:hover {
+    background-color: #b00808;
+    color: white;
+    transform: translateY(-2px);
+}
+
+/* Footer */
+.ufc-footer {
+    background-color: #000;
+    padding: 40px 0 20px;
+    margin-top: 50px;
+    border-top: 2px solid #d20a0a;
+}
+
+.ufc-footer h3 {
+    font-family: 'Bebas Neue', sans-serif;
+    color: #d20a0a;
+    margin-bottom: 20px;
+}
+
+.ufc-newsletter .form-control {
+    background-color: #333;
+    border: none;
+    color: white;
+}
+
+.ufc-newsletter .form-control:focus {
+    box-shadow: 0 0 0 0.25rem rgba(210, 10, 10, 0.25);
+}
+
+.ufc-copyright {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #333;
+    text-align: center;
+    color: #777;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    .ufc-main-title {
+        font-size: 3.5rem;
+    }
+    
+    .fighters {
+        flex-direction: column;
+    }
+    
+    .fighter {
+        width: 100%;
+        margin-bottom: 15px;
+    }
+    
+    .vs-badge {
+        margin: 10px 0;
+        transform: rotate(90deg);
+    }
+}
+
+@media (max-width: 768px) {
+    .ufc-event-card {
+        flex-direction: column;
+    }
+    
+    .event-date {
+        flex-direction: row;
+        justify-content: space-around;
+        padding: 10px;
+    }
+    
+    .date-day, .date-month, .date-year {
+        margin: 0 5px;
+    }
+}
+
+@media (max-width: 576px) {
+    .ufc-main-title {
+        font-size: 2.5rem;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+}

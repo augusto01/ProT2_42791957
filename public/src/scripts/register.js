@@ -1,3 +1,4 @@
+
 //REGISTRAR USUARIO 
 document.getElementById("registro-form").addEventListener("submit", async (e) => {
   e.preventDefault();
@@ -29,7 +30,7 @@ document.getElementById("registro-form").addEventListener("submit", async (e) =>
   const datos = { nombre, apellido, email, password };
 
   try {
-    const response = await fetch("http://localhost/proyecto_td/public/api/registro", {
+    const response = await fetch("http://localhost/ProT2_42791957/public/api/registro", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(datos),
