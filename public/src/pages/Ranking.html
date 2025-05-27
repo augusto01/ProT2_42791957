@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rankings UFC</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Fuente Bebas Neue -->
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Estilos personalizados -->
+    <link rel="stylesheet" href="../styles/nav.css">
+    <link rel="stylesheet" href="../styles/rankings.css">
+</head>
+<body>
+    <!-- NAVBAR DE BOOTSTRAP -->
+    <!-- NAVBAR DE BOOTSTRAP -->
+   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <!-- Logo visible en móviles (centrado) -->
+            <div class="d-flex justify-content-center w-100 d-lg-none">
+                <div class="nav-item">
+                <a class="navbar-brand logo-ufc" href="../../index.html">
+                    <img src="../../resources/Logo-UFC.png" alt="Logo UFC" height="50">
+                </a>
+                <div class="hover"></div>
+            </div>
+
+            </div>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="../pages/Ranking.html">Peleadores</a>
+                        <div class="hover"></div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="../pages/Ranking.html">Rankings</a>
+                        <div class="hover"></div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="../pages/Eventos.html">Eventos</a>
+                        <div class="hover"></div>
+                    </li>
+                </ul>
+                
+                <!-- Logo visible en pantallas grandes (se oculta en móviles) -->
+                <div class="nav-item">
+                    <a class="navbar-brand mx-auto logo-ufc d-none d-lg-block" href="../../index.html">
+                        <img src="../../resources/Logo-UFC.png" alt="Logo UFC" height="50">
+                    </a>
+                    <div class="hover"></div>
+                </div>
+                
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="src/pages/QuienesSomos.html">Quienes Somos</a>
+                        <div class="hover"></div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="src/pages/QuienesSomos.html">Acerca de</a>
+                        <div class="hover"></div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="src/pages/Login.html">Iniciar Sesion</a>
+                        <div class="hover"></div>
+                    </li>
+                   <li class="nav-item">
+                        <a class="nav-link" href="#" id="searchIcon" data-toggle="collapse" data-target="#searchInput" aria-expanded="false" aria-controls="searchInput">
+                            <i class="bi bi-search"></i> <!-- Ícono de búsqueda -->
+                        </a>
+                        <div class="text-center" id="searchInput">
+                            <input type="text" class="form-control" placeholder="Buscar..." aria-label="Buscar">
+                        </div>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- Hero Section -->
+    <header class="ufc-hero">
+        <div class="container">
+            <h1 class="ufc-main-title">RANKINGS UFC</h1>
+            <p class="ufc-subtitle">Los mejores peleadores de cada división</p>
+        </div>
+    </header>
+
+    <!-- Selector de Divisiones -->
+    <section class="container py-4">
+        <div class="division-selector">
+            <h2 class="section-title">SELECCIONA UNA DIVISIÓN</h2>
+            <div class="division-buttons">
+                <button class="btn btn-division active" data-division="men">MASCULINO</button>
+                <button class="btn btn-division" data-division="women">FEMENINO</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rankings Masculinos -->
+    <section class="container py-4" id="men-rankings">
+        <h2 class="section-title">RANKINGS MASCULINOS</h2>
+        
+        <!-- Peso Pesado -->
+        <div class="ranking-card">
+            <div class="ranking-header">
+                <h3>PESO PESADO (265 lb / 120.2 kg)</h3>
+            </div>
+            <div class="table-responsive">
+                <table class="table ranking-table">
+                    <thead>
+                        <tr>
+                            <th>Pos.</th>
+                            <th>Peleador</th>
+                            <th>Récord</th>
+                            <th>Últ. Pelea</th>
+                            <th>Racha</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="champion-row">
+                            <td><span class="champion-badge">C</span></td>
+                            <td>
+                                <div class="fighter-info">
+                                    <img src="resources/jones.jpg" alt="Jon Jones" class="fighter-thumb">
+                                    <span>Jon "Bones" Jones</span>
+                                </div>
+                            </td>
+                            <td>27-1-0 (1NC)</td>
+                            <td>W - Ciryl Gane</td>
+                            <td>+4</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>
+                                <div class="fighter-info">
+                                    <img src="resources/ngannou.jpg" alt="Francis Ngannou" class="fighter-thumb">
+                                    <span>Francis Ngannou</span>
+                                </div>
+                            </td>
+                            <td>17-3-0</td>
+                            <td>W - Ciryl Gane</td>
+                            <td>+6</td>
+                        </tr>
+                        <!-- Más filas... -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Peso Medio -->
+        <div class="ranking-card">
+            <div class="ranking-header">
+                <h3>PESO MEDIO (185 lb / 83.9 kg)</h3>
+            </div>
+            <div class="table-responsive">
+                <table class="table ranking-table">
+                    <!-- Tabla similar a la anterior -->
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rankings Femeninos (oculto inicialmente) -->
+    <section class="container py-4" id="women-rankings" style="display: none;">
+        <h2 class="section-title">RANKINGS FEMENINOS</h2>
+        
+        <!-- Peso Gallo Femenino -->
+        <div class="ranking-card">
+            <div class="ranking-header">
+                <h3>PESO GALLO FEMENINO (135 lb / 61.2 kg)</h3>
+            </div>
+            <div class="table-responsive">
+                <table class="table ranking-table">
+                    <!-- Tabla similar -->
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="ufc-footer">
+        <div class="container">
+            <p class="ufc-copyright">&copy; 2024 Ultimate Fighting Championship. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Script personalizado -->
+    <script src="../scripts/rankings.js"></script>
+</body>
+</html>

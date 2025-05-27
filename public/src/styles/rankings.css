@@ -1,0 +1,199 @@
+/* Estilos generales */
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    background-color: #111;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+/* Hero Section */
+.ufc-hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+                url('../resources/ufc-rankings-hero.jpg') no-repeat center center;
+    background-size: cover;
+    height: 50vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.ufc-main-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 4.5rem;
+    color: #fff;
+    text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.8);
+    letter-spacing: 3px;
+    margin-bottom: 15px;
+    animation: pulse 2s infinite alternate;
+}
+
+.ufc-subtitle {
+    font-size: 1.5rem;
+    color: #d20a0a;
+    font-weight: bold;
+}
+
+@keyframes pulse {
+    from {
+        text-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
+    }
+    to {
+        text-shadow: 0 0 20px rgba(255, 0, 0, 0.8);
+    }
+}
+
+/* Selector de Divisiones */
+.division-selector {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.btn-division {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+    padding: 10px 25px;
+    margin: 0 10px;
+    background-color: #222;
+    color: #aaa;
+    border: 2px solid #333;
+    transition: all 0.3s ease;
+}
+
+.btn-division.active, .btn-division:hover {
+    background-color: #d20a0a;
+    color: white;
+    border-color: #d20a0a;
+    transform: translateY(-2px);
+}
+
+/* Tarjetas de Ranking */
+.ranking-card {
+    background-color: #1a1a1a;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    margin-bottom: 30px;
+    border-left: 4px solid #d20a0a;
+}
+
+.ranking-header {
+    background-color: #000;
+    padding: 15px 20px;
+    border-bottom: 2px solid #d20a0a;
+}
+
+.ranking-header h3 {
+    font-family: 'Bebas Neue', sans-serif;
+    color: #fff;
+    margin: 0;
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+}
+
+/* Tabla de Rankings */
+.ranking-table {
+    margin-bottom: 0;
+    color: #fff;
+}
+
+.ranking-table thead th {
+    background-color: #222;
+    color: #d20a0a;
+    font-family: 'Bebas Neue', sans-serif;
+    letter-spacing: 1px;
+    border-bottom: 2px solid #d20a0a;
+    font-size: 1.1rem;
+}
+
+.ranking-table tbody tr {
+    transition: all 0.2s ease;
+}
+
+.ranking-table tbody tr:hover {
+    background-color: #222;
+}
+
+.champion-row {
+    background-color: rgba(210, 10, 10, 0.1);
+}
+
+.champion-row td {
+    font-weight: bold;
+}
+
+.champion-badge {
+    display: inline-block;
+    background-color: #d20a0a;
+    color: white;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 25px;
+    font-family: 'Bebas Neue', sans-serif;
+}
+
+.fighter-info {
+    display: flex;
+    align-items: center;
+}
+
+.fighter-thumb {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 10px;
+    border: 2px solid #d20a0a;
+}
+
+/* Footer */
+.ufc-footer {
+    background-color: #000;
+    padding: 30px 0;
+    margin-top: 50px;
+    border-top: 2px solid #d20a0a;
+    text-align: center;
+}
+
+.ufc-copyright {
+    color: #777;
+    margin: 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .ufc-main-title {
+        font-size: 3rem;
+    }
+    
+    .ranking-header h3 {
+        font-size: 1.3rem;
+    }
+    
+    .fighter-info span {
+        display: none;
+    }
+}
+
+@media (max-width: 576px) {
+    .ufc-hero {
+        height: 40vh;
+    }
+    
+    .ufc-main-title {
+        font-size: 2.5rem;
+    }
+    
+    .btn-division {
+        display: block;
+        width: 100%;
+        margin: 5px 0;
+    }
+}
