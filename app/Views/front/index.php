@@ -22,48 +22,8 @@
 </head>
 
 <body>
-    <!-- NAVBAR -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container-fluid">
-            <div class="d-flex justify-content-center w-100 d-lg-none">
-                <div class="nav-item">
-                    <a class="navbar-brand logo-ufc" href="#">
-                        <img src="<?= base_url('public/resources/Logo-UFC.png') ?>" alt="Logo UFC" height="50">
-                    </a>
-                    <div class="hover"></div>
-                </div>
-            </div>
-
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-
-            <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item"><a class="nav-link" href="#">Peleadores</a></li>
-                    <li class="nav-item"><a class="nav-link" href="<?= base_url('pages/Ranking.html') ?>">Rankings</a></li>
-                    <li class="nav-item"><a class="nav-link" href="<?= base_url('pages/Eventos.html') ?>">Eventos</a></li>
-                </ul>
-
-                <div class="nav-item d-none d-lg-block">
-                    <a class="navbar-brand mx-auto logo-ufc" href="#">
-                        <img src="<?= base_url('public/resources/Logo-UFC.png') ?>" alt="Logo UFC" height="50">
-                    </a>
-                </div>
-
-                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                    <li class="nav-item"><a class="nav-link" href="<?= base_url('pages/QuienesSomos.html') ?>">Quienes Somos</a></li>
-                    <li class="nav-item"><a class="nav-link" href="<?= base_url('pages/QuienesSomos.html') ?>">Acerca de</a></li>
-                    <li class="nav-item"><a class="nav-link" href="<?= base_url('pages/Login.html') ?>">Iniciar Sesión</a></li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#" id="searchIcon">
-                            <i class="bi bi-search"></i>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+    <!-- NAVBAR DE BOOTSTRAP -->
+    <?= $this->include('front/layout/header') ?>
 
     <!-- CONTENIDO PRINCIPAL -->
     <section class="content-cartelera text-center mt-5">
@@ -218,33 +178,6 @@
 
 
     <!-- FOOTER -->
-    <footer class="footer text-center py-4">
-        <div class="container">
-            <div class="row">
-                <div class="col-12 col-md-4">
-                    <img src="<?= base_url('public/resources/Logo-UFC.png') ?>" class="logo-footer" alt="Logo UFC">
-                </div>
-                <div class="col-12 col-md-4">
-                    <p>Hecho por Almiron Pedro Augusto, DNI: 42791957, Talentos Digitales 2025</p>
-                    <div class="container-icons d-flex justify-content-center flex-wrap">
-                        <img class="icon mx-2" src="<?= base_url('public/resources/whatsapp.png') ?>" alt="WhatsApp" style="width: 30px;">
-                        <img class="icon mx-2" src="<?= base_url('public/resources/twitter.png') ?>" alt="Twitter" style="width: 30px;">
-                        <img class="icon mx-2" src="<?= base_url('public/resources/facebook.png') ?>" alt="Facebook" style="width: 30px;">
-                    </div>
-                </div>
-                <div class="col-12 col-md-4">
-                    <img src="<?= base_url('public/resources/logo.png') ?>" class="logo-footer" alt="Logo UFC">
-                </div>
-            </div>
-        </div>
-    </footer>
-
-    <!-- Bootstrap 5 -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"></script>
-
-    <!-- Tus scripts propios -->
-    <script src="<?= base_url('public/src/js/index.js') ?>"></script>
-
-
+    <?= $this->include('front/layout/footer') ?>
 </body>
 </html>

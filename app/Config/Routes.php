@@ -18,5 +18,7 @@ $routes->group('api', function($routes) {
 //registro de usuario
 $routes->post('api/registro', 'AuthController::register');
 $routes->get('quienes-somos', 'Home::quienesSomos');
+$routes->get('login', 'Home::login');
 $routes->get('registrarse', 'Home::registrarse');
+$routes->get('eventos', 'Home::eventos');
 $routes->get('config', 'ConfigController::getConfig');

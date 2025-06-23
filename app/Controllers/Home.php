@@ -9,4 +9,15 @@ class Home extends BaseController
         return view('front/index');
 
     }
+
+    public function eventos()
+    {
+        return view('front/eventos'); 
+    }
+
+    public function login()
+    {
+        return view('front/login'); 
+    }
+
 }

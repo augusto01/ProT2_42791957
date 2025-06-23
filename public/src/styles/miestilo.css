@@ -38,18 +38,7 @@ body {
 section {
     padding: 20px; 
 }
-footer {
-    background-color: rgb(0, 0, 0); 
-    color: #fff;
-    padding: 20px 0; 
-}
 
-.footer-content {
-    background-color: black;
-    max-width: 800px; 
-    margin: 0 auto; 
-    text-align: center; 
-}
 
 img {
     display: block;
@@ -71,13 +60,7 @@ h5{
 }
 
 
-.footer{
-    padding: 3px;
-    background-color: black;
-    text-align: center;
-    font-weight: bold;
-    font-family: "Bebas Neue", sans-serif !important;
-}
+
 
 .container-icons {
     text-align: center;
@@ -194,11 +177,7 @@ h5{
     margin: 0px;
 }
 
-.logo-footer {
-    width: 100%; /* Ajusta el ancho en porcentaje */
-    max-width: 150px; /* Tamaño máximo para pantallas grandes */
-    height: auto; /* Mantiene la proporción del logo */
-}
+
 
 .h1-section {
     font-family: "Bebas Neue", sans-serif;
@@ -214,9 +193,7 @@ h5{
 }
 
 
-.footer {
-    padding: 2rem 1rem; /* Espaciado responsivo */
-}
+
 
 .container-icons .icon {
     width: 5vw; /* Tamaño responsivo para los íconos */
