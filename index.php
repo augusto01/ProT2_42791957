@@ -49,7 +49,7 @@ if (getcwd() . DIRECTORY_SEPARATOR !== FCPATH) {
 // LOAD OUR PATHS CONFIG FILE
 // This is the line that might need to be changed, depending on your folder structure.
 // Ruta al archivo Paths.php
-require __DIR__ . '/../app/Config/Paths.php';
+require __DIR__ . '../app/Config/Paths.php';
 
 
 // ^^^ Change this line if you move your application folder
