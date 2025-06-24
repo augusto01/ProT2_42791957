@@ -57,8 +57,7 @@
         </button>
     </section>
 
-    <div class="container ">
-    <h1 class="text-center h1-section">DIVISIONES</h1>
+<h1 class="text-center h1-section">DIVISIONES</h1>
     
         <div class="container">
     <div class="row">
@@ -174,10 +173,11 @@
             </div>
         </div>
     </div>
-</div>
+</div>    
 
 
     <!-- FOOTER -->
     <?= $this->include('front/layout/footer') ?>
+    <script src="<?= base_url('public/src/scripts/index.js') ?>"></script>
 </body>
 </html>

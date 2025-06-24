@@ -21,8 +21,8 @@
         <div class="container-fluid">
             <div class="d-flex justify-content-center w-100 d-lg-none">
                 <div class="nav-item">
-                    <a class="navbar-brand logo-ufc" href="#">
-                        <img src="<?= base_url('public/resources/Logo-UFC.png') ?>" alt="Logo UFC" height="50">
+                <a class="navbar-brand logo-ufc" href="<?= site_url('/') ?>">                        
+                    <img src="<?= base_url('public/resources/Logo-UFC.png') ?>" alt="Logo UFC" height="50">
                     </a>
                     <div class="hover"></div>
                 </div>
@@ -40,7 +40,7 @@
                 </ul>
 
                 <div class="nav-item d-none d-lg-block">
-                    <a class="navbar-brand mx-auto logo-ufc" href="#">
+                <a class="navbar-brand logo-ufc" href="<?= site_url('/') ?>">                        
                         <img src="<?= base_url('public/resources/Logo-UFC.png') ?>" alt="Logo UFC" height="50">
                     </a>
                 </div>

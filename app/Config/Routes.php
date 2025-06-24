@@ -5,20 +5,26 @@ use CodeIgniter\Router\RouteCollection;
 /**
  * @var RouteCollection $routes
  */
-$routes->get('/', 'Home::index');
 
-// Grupo para API
-$routes->group('api', function($routes) {
-    $routes->get('peleadores', 'ApiController::getPeleadores');
-    $routes->post('login', 'ApiController::login');
+// Ruta principal
+$routes->get('/', 'Home::index', ['as' => 'home']);
+// Grupo API
+$routes->group('api', ['namespace' => 'App\Controllers'], function($routes) {
+    // Peleadores
+    $routes->get('peleadores', 'ApiController::getPeleadores', ['as' => 'api.peleadores']);
+    
+    // Autenticación
+    $routes->post('login', 'ApiController::login', ['as' => 'api.login']);
+    $routes->post('registro', 'AuthController::register', ['as' => 'api.registro']);
 });
 
-// Rutas para páginas estáticas (si usas Views)
+// Rutas de páginas estáticas
+$routes->group('', ['namespace' => 'App\Controllers'], function($routes) {
+    $routes->get('quienes-somos', 'Home::quienesSomos', ['as' => 'quienes-somos']);
+    $routes->get('login', 'Home::login', ['as' => 'login']);
+    $routes->get('registrarse', 'Home::registrarse', ['as' => 'registrarse']);
+    $routes->get('eventos', 'Home::eventos', ['as' => 'eventos']);
+});
 
-//registro de usuario
-$routes->post('api/registro', 'AuthController::register');
-$routes->get('quienes-somos', 'Home::quienesSomos');
-$routes->get('login', 'Home::login');
-$routes->get('registrarse', 'Home::registrarse');
-$routes->get('eventos', 'Home::eventos');
-$routes->get('config', 'ConfigController::getConfig');
+// Configuración
+$routes->get('config', 'ConfigController::getConfig', ['as' => 'config']);

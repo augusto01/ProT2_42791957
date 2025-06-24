@@ -19,5 +19,13 @@ class Home extends BaseController
     {
         return view('front/login'); 
     }
+    public function registrarse()
+    {
+        return view('front/registrarse'); 
+    }
+    public function quienesSomos()
+    {
+        return view('front/quienes-somos'); 
+    }
 
 }
