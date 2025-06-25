@@ -4,7 +4,7 @@
 <link rel="stylesheet" href="<?= base_url('public/src/styles/tienda_admin.css') ?>">
 
 <section class="container py-5">
-    <h2 class="section-title">Articulos registrados</h2>
+    <h2 class="section-title">Artículos registrados</h2>
     <div class="table-responsive">
 
         <!-- Formulario de búsqueda -->
@@ -15,10 +15,8 @@
             </div>
         </form>
 
-                
-        <!-- Boton de agregar producto -->
-        <a href="<?= site_url('productos/crear') ?>" class="btn-admin btn-add">Agregar Producto</a>
-
+        <!-- Botón de agregar producto -->
+        <a href="<?= site_url('productos/crear') ?>" class="btn-admin btn-add mb-3">Agregar Producto</a>
 
         <table class="table-admin">
             <thead>
@@ -27,33 +25,40 @@
                     <th>Categoría</th>
                     <th>Descripción</th>
                     <th>Talle</th>
+                    <th>Precio</th>
                     <th>Foto</th>
                     <th>Acciones</th>
                 </tr>
             </thead>
             <tbody>
-                <?php foreach ($productos as $producto): ?>
+                <?php if (!empty($productos)): ?>
+                    <?php foreach ($productos as $producto): ?>
+                        <tr>
+                            <td><?= esc($producto['nombre']) ?></td>
+                            <td><?= esc($producto['categoria']) ?></td>
+                            <td><?= esc($producto['descripcion']) ?></td>
+                            <td><?= esc($producto['talle']) ?></td>
+                            <td>$<?= esc(number_format($producto['precio'], 2, ',', '.')) ?></td>
+                            <td>
+                                <?php if (!empty($producto['foto'])): ?>
+                                    <img src="<?= base_url('public/uploads/' . $producto['foto']) ?>" alt="<?= esc($producto['nombre']) ?>" class="img-fluid" style="max-height: 150px; object-fit: cover;">
+                                <?php else: ?>
+                                    <span>Sin imagen</span>
+                                <?php endif; ?>
+                            </td>
+                            <td>
+                                <div class="btn-group">
+                                    <a href="<?= site_url('productos/editar/' . $producto['id']) ?>" class="btn-admin btn-edit">Editar</a>
+                                    <a href="<?= site_url('productos/eliminar/' . $producto['id']) ?>" class="btn-admin btn-delete" onclick="return confirm('¿Eliminar producto?')">Eliminar</a>
+                                </div>
+                            </td>
+                        </tr>
+                    <?php endforeach; ?>
+                <?php else: ?>
                     <tr>
-                        <td><?= esc($producto['nombre']) ?></td>
-                        <td><?= esc($producto['categoria']) ?></td>
-                        <td><?= esc($producto['descripcion']) ?></td>
-                        <td><?= esc($producto['talle']) ?></td>
-                        <td>
-                            <?php if ($producto['foto']): ?>
-                            <img src="<?= base_url('public/uploads/' . $producto['foto']) ?>" alt="<?= esc($producto['nombre']) ?>" class="img-fluid" style="max-height: 200px; object-fit: cover;">
-                            <?php else: ?>
-                                <span>Sin imagen</span>
-                            <?php endif; ?>
-                        </td>
-                        <td>
-                            <div class="btn-group">
-                                <a href="<?= site_url('productos/editar/' . $producto['id']) ?>" class="btn-admin btn-edit">Editar</a>
-                                <a href="<?= site_url('productos/eliminar/' . $producto['id']) ?>" class="btn-admin btn-delete" onclick="return confirm('¿Eliminar producto?')">Eliminar</a>
-                            </div>
-                        </td>
-
+                        <td colspan="7" class="text-center">No se encontraron productos.</td>
                     </tr>
-                <?php endforeach; ?>
+                <?php endif; ?>
             </tbody>
         </table>
 

@@ -4,16 +4,13 @@ use App\Models\ProductoModel;
 
 class ProductoController extends BaseController
 {
-    // Vista clientes - solo productos activos
     public function tienda()
     {
         $model = new ProductoModel();
         $productos = $model->where('activo', 1)->findAll();
-
         return view('front/tienda', ['productos' => $productos]);
     }
 
-    // Vista admins - productos activos con edición
     public function tiendaAdmin()
     {
         if (!session()->get('logged_in') || session()->get('rol') !== 'admin') {
@@ -21,8 +18,8 @@ class ProductoController extends BaseController
         }
 
         $model = new ProductoModel();
-
         $busqueda = $this->request->getGet('buscar');
+
         if ($busqueda) {
             $productos = $model
                 ->like('nombre', $busqueda)
@@ -40,8 +37,6 @@ class ProductoController extends BaseController
         ]);
     }
 
-
-    // Mostrar formulario para crear producto
     public function crear()
     {
         if (!session()->get('logged_in') || session()->get('rol') !== 'admin') {
@@ -51,7 +46,6 @@ class ProductoController extends BaseController
         return view('front/producto_create');
     }
 
-    // Guardar producto nuevo
     public function guardar()
     {
         if (!session()->get('logged_in') || session()->get('rol') !== 'admin') {
@@ -59,14 +53,13 @@ class ProductoController extends BaseController
         }
 
         $validation = \Config\Services::validation();
-
         $rules = [
-            'nombre'      => 'required|min_length[3]',
-            'categoria'   => 'required',
+            'nombre' => 'required|min_length[3]',
+            'categoria' => 'required',
+            'talle' => 'required',
             'descripcion' => 'required',
-            'talle'       => 'required',
-            'precio'      => 'required|decimal',
-            'foto' => 'uploaded[foto]|mime_in[foto,image/jpeg,image/png,image/webp,image/avif]|max_size[foto,2048]',
+            'precio' => 'required|decimal',
+            'foto' => 'uploaded[foto]|mime_in[foto,image/jpeg,image/png]|max_size[foto,2048]',
         ];
 
         if (!$this->validate($rules)) {
@@ -78,13 +71,13 @@ class ProductoController extends BaseController
         $file->move(ROOTPATH . 'public/uploads', $newName);
 
         $data = [
-            'nombre'      => $this->request->getPost('nombre'),
-            'categoria'   => $this->request->getPost('categoria'),
+            'nombre' => $this->request->getPost('nombre'),
+            'categoria' => $this->request->getPost('categoria'),
+            'talle' => $this->request->getPost('talle'),
             'descripcion' => $this->request->getPost('descripcion'),
-            'talle'       => $this->request->getPost('talle'),
-            'foto'        => $newName,
             'precio' => $this->request->getPost('precio'),
-            'activo'      => 1,
+            'foto' => $newName,
+            'activo' => 1,
         ];
 
         $model = new ProductoModel();
@@ -93,7 +86,6 @@ class ProductoController extends BaseController
         return redirect()->to('productos/admin')->with('success', 'Producto creado correctamente');
     }
 
-    // Mostrar formulario de edición
     public function editar($id)
     {
         if (!session()->get('logged_in') || session()->get('rol') !== 'admin') {
@@ -110,7 +102,6 @@ class ProductoController extends BaseController
         return view('front/producto_edit', ['producto' => $producto]);
     }
 
-    // Actualizar producto existente
     public function actualizar($id)
     {
         if (!session()->get('logged_in') || session()->get('rol') !== 'admin') {
@@ -125,10 +116,11 @@ class ProductoController extends BaseController
         }
 
         $data = [
-            'nombre'      => $this->request->getPost('nombre'),
-            'categoria'   => $this->request->getPost('categoria'),
+            'nombre' => $this->request->getPost('nombre'),
+            'categoria' => $this->request->getPost('categoria'),
+            'talle' => $this->request->getPost('talle'),
             'descripcion' => $this->request->getPost('descripcion'),
-            'talle'       => $this->request->getPost('talle'),
+            'precio' => $this->request->getPost('precio'),
         ];
 
         $file = $this->request->getFile('foto');
@@ -140,10 +132,9 @@ class ProductoController extends BaseController
 
         $model->update($id, $data);
 
-        return redirect()->to('productos/admin')->with('success', 'Producto actualizado');
+        return redirect()->to('productos/admin')->with('success', 'Producto actualizado correctamente');
     }
 
-    // Baja lógica del producto
     public function eliminar($id)
     {
         if (!session()->get('logged_in') || session()->get('rol') !== 'admin') {
