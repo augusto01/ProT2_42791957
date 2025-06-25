@@ -1,3 +1,12 @@
+ <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <!-- Fuente Bebas Neue -->
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet" />
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" />
+    <!-- Estilos personalizados -->
+    <link rel="stylesheet" href="<?= base_url('public/src/styles/nav.css') ?>" />
+
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
         <div class="d-flex justify-content-center w-100 d-lg-none">
@@ -21,9 +30,11 @@
 
                 <?php if (session()->get('logged_in') && session()->get('rol') === 'admin'): ?>
                     <li class="nav-item"><a class="nav-link" href="<?= site_url('articulos') ?>">Artículos</a></li>
-                    <li class="nav-item"><a class="nav-link" href="<?= site_url('articulos') ?>">Tienda</a></li>
+                    <li class="nav-item">
+                       <a class="nav-link" href="<?= site_url(session('rol') === 'admin' ? 'productos/admin' : 'productos') ?>">Tienda</a>
+                    </li>
                 <?php endif; ?>
-            </ul>
+            </ul>  
 
             <div class="nav-item d-none d-lg-block">
                 <a class="navbar-brand logo-ufc" href="<?= site_url('/') ?>">                        

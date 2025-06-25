@@ -30,5 +30,30 @@ $routes->group('', ['namespace' => 'App\Controllers'], function($routes) {
     $routes->get('eventos', 'Home::eventos', ['as' => 'eventos']);
 });
 
+
+// Rutas de artículos
+    // Vista para clientes
+    $routes->get('productos', 'ProductoController::tienda');
+
+    // Vista para administradores
+    $routes->get('productos/admin', 'ProductoController::tiendaAdmin');
+    $routes->get('productos/crear', 'ProductoController::crear');
+    $routes->post('productos/guardar', 'ProductoController::guardar');
+    $routes->get('productos/editar/(:num)', 'ProductoController::editar/$1');
+    $routes->post('productos/actualizar/(:num)', 'ProductoController::actualizar/$1');
+    $routes->get('productos/eliminar/(:num)', 'ProductoController::eliminar/$1');
+    
+    // Mostrar formulario para crear producto (GET)
+    $routes->get('productos/crear', 'ProductoController::crear');
+
+    // Guardar producto nuevo (POST)
+    $routes->post('productos/guardar', 'ProductoController::guardar');
+
+
+
+
+
+
+
 // Configuración
 $routes->get('config', 'ConfigController::getConfig', ['as' => 'config']);
