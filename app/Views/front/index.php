@@ -23,7 +23,7 @@
 
 <body>
     <!-- NAVBAR DE BOOTSTRAP -->
-    <?= $this->include('front/layout/header') ?>
+    <?= $this->include('front/navbarlogged') ?>
 
     <!-- CONTENIDO PRINCIPAL -->
     <section class="content-cartelera text-center mt-5">

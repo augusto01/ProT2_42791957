@@ -6,6 +6,7 @@ use CodeIgniter\API\ResponseTrait;
 class AuthController extends BaseController {
     use ResponseTrait;
 
+    // Registro de usuarios (API)
     public function register() {
         $json = $this->request->getJSON(true); // ← convierte JSON a array asociativo
 
@@ -35,5 +36,34 @@ class AuthController extends BaseController {
 
         $model->save($data);
         return $this->respondCreated(['message' => 'Usuario registrado correctamente']);
+    }
+
+    // Proceso de login (formulario)
+    public function loginProcess()
+    {
+        $email = $this->request->getPost('email');
+        $password = $this->request->getPost('password');
+
+        $model = new UsuarioModel();
+        $usuario = $model->where('email', $email)->first();
+
+        if ($usuario && password_verify($password, $usuario['password'])) {
+            session()->set([
+                'usuario' => $usuario['nombre'],
+                'email'   => $usuario['email'],
+                'logged_in' => true
+            ]);
+
+            return redirect()->to('/');
+        }
+
+        return redirect()->back()->with('error', 'Credenciales incorrectas.');
+    }
+
+    // Cierre de sesión
+    public function logout()
+    {
+        session()->destroy();
+        return redirect()->to('/');
     }
 }

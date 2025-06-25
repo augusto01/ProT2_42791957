@@ -14,6 +14,10 @@
 </head>
 
 <body>
+    <?php if(session()->getFlashdata('error')): ?>
+        <div class="alert alert-danger text-center"><?= session('error') ?></div>
+    <?php endif; ?>
+
     <div class="container-form">
         <form action="<?= site_url('login/process') ?>" method="post">
             <div class="container-logo">

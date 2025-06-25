@@ -18,6 +18,10 @@ $routes->group('api', ['namespace' => 'App\Controllers'], function($routes) {
     $routes->post('registro', 'AuthController::register', ['as' => 'api.registro']);
 });
 
+$routes->post('login/process', 'AuthController::loginProcess');
+$routes->get('logout', 'AuthController::logout');
+
+
 // Rutas de páginas estáticas
 $routes->group('', ['namespace' => 'App\Controllers'], function($routes) {
     $routes->get('quienes-somos', 'Home::quienesSomos', ['as' => 'quienes-somos']);
