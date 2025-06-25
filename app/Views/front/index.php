@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -18,6 +19,7 @@
     <link rel="stylesheet" href="<?= base_url('public/src/styles/nav.css') ?>">
     <link rel="stylesheet" href="<?= base_url('public/src/styles/miestilo.css') ?>">
 
+    
 
 </head>
 

@@ -50,7 +50,8 @@ class AuthController extends BaseController {
         if ($usuario && password_verify($password, $usuario['password'])) {
             session()->set([
                 'usuario' => $usuario['nombre'],
-                'email'   => $usuario['email'],
+                'email' => $usuario['email'],
+                'rol' => $usuario['rol'],  // <-- Guardar el rol acá
                 'logged_in' => true
             ]);
 
