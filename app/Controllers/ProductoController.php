@@ -10,7 +10,7 @@ class ProductoController extends BaseController
         $model = new ProductoModel();
         $productos = $model->where('activo', 1)->findAll();
 
-        return view('front/tienda_cliente', ['productos' => $productos]);
+        return view('front/tienda', ['productos' => $productos]);
     }
 
     // Vista admins - productos activos con edición
@@ -65,6 +65,7 @@ class ProductoController extends BaseController
             'categoria'   => 'required',
             'descripcion' => 'required',
             'talle'       => 'required',
+            'precio'      => 'required|decimal',
             'foto'        => 'uploaded[foto]|is_image[foto]|max_size[foto,2048]',
         ];
 
@@ -82,6 +83,7 @@ class ProductoController extends BaseController
             'descripcion' => $this->request->getPost('descripcion'),
             'talle'       => $this->request->getPost('talle'),
             'foto'        => $newName,
+            'precio' => $this->request->getPost('precio'),
             'activo'      => 1,
         ];
 

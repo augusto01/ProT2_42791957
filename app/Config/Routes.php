@@ -34,9 +34,12 @@ $routes->group('', ['namespace' => 'App\Controllers'], function($routes) {
 // Rutas de artículos
     // Vista para clientes
     $routes->get('productos', 'ProductoController::tienda');
+    $routes->get('tienda', 'ProductoController::tienda');
+
 
     // Vista para administradores
     $routes->get('productos/admin', 'ProductoController::tiendaAdmin');
+
     $routes->get('productos/crear', 'ProductoController::crear');
     $routes->post('productos/guardar', 'ProductoController::guardar');
     $routes->get('productos/editar/(:num)', 'ProductoController::editar/$1');

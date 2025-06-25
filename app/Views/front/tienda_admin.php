@@ -4,7 +4,7 @@
 <link rel="stylesheet" href="<?= base_url('public/src/styles/tienda_admin.css') ?>">
 
 <section class="container py-5">
-    <h2 class="section-title">TIENDA DE PRODUCTOS</h2>
+    <h2 class="section-title">Articulos registrados</h2>
     <div class="table-responsive">
 
         <!-- Formulario de búsqueda -->
@@ -14,6 +14,11 @@
                 <button class="btn-admin btn-delete" type="submit">Buscar</button>
             </div>
         </form>
+
+                
+        <!-- Boton de agregar producto -->
+        <a href="<?= site_url('productos/crear') ?>" class="btn-admin btn-add">Agregar Producto</a>
+
 
         <table class="table-admin">
             <thead>
