@@ -59,7 +59,7 @@ class ProductoController extends BaseController
             'talle' => 'required',
             'descripcion' => 'required',
             'precio' => 'required|decimal',
-            'foto' => 'uploaded[foto]|mime_in[foto,image/jpeg,image/png]|max_size[foto,2048]',
+            'foto'        => 'uploaded[foto]|mime_in[foto,image/jpeg,image/webp,image/avif]|max_size[foto,2048]',
         ];
 
         if (!$this->validate($rules)) {
