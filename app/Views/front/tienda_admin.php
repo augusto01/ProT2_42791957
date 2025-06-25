@@ -40,15 +40,18 @@
                         <td><?= esc($producto['talle']) ?></td>
                         <td>
                             <?php if ($producto['foto']): ?>
-                                <img src="<?= base_url('uploads/' . $producto['foto']) ?>" class="product-img" alt="">
+                            <img src="<?= base_url('public/uploads/' . $producto['foto']) ?>" alt="<?= esc($producto['nombre']) ?>" class="img-fluid" style="max-height: 200px; object-fit: cover;">
                             <?php else: ?>
                                 <span>Sin imagen</span>
                             <?php endif; ?>
                         </td>
                         <td>
-                            <a href="<?= site_url('productos/editar/' . $producto['id']) ?>" class="btn-admin btn-edit">Editar</a>
-                            <a href="<?= site_url('productos/eliminar/' . $producto['id']) ?>" class="btn-admin btn-delete" onclick="return confirm('¿Eliminar producto?')">Eliminar</a>
+                            <div class="btn-group">
+                                <a href="<?= site_url('productos/editar/' . $producto['id']) ?>" class="btn-admin btn-edit">Editar</a>
+                                <a href="<?= site_url('productos/eliminar/' . $producto['id']) ?>" class="btn-admin btn-delete" onclick="return confirm('¿Eliminar producto?')">Eliminar</a>
+                            </div>
                         </td>
+
                     </tr>
                 <?php endforeach; ?>
             </tbody>

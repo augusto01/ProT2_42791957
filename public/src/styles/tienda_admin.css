@@ -7,18 +7,6 @@ body {
     line-height: 1.6;
 }
 
-.input-group input.form-control {
-    background-color: #1a1a1a;
-    color: #fff;
-    border: 1px solid #333;
-}
-
-.input-group .btn-ufc {
-    border-top-left-radius: 0;
-    border-bottom-left-radius: 0;
-}
-
-
 .section-title {
     font-family: 'Bebas Neue', sans-serif;
     color: #d20a0a;
@@ -31,70 +19,61 @@ body {
 }
 
 .table-admin {
-    background-color: #1a1a1a;
-    color: #fff;
     width: 100%;
-    border-radius: 8px;
-    overflow: hidden;
+    border-collapse: collapse;
 }
 
-.table-admin thead th {
-    background-color: #000;
-    color: #d20a0a;
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 1.2rem;
-    padding: 12px;
-    text-transform: uppercase;
-    border-bottom: 2px solid #d20a0a;
-}
-
-.table-admin tbody tr {
-    transition: background-color 0.3s ease;
-}
-
-.table-admin tbody tr:hover {
-    background-color: #222;
-}
-
+.table-admin th,
 .table-admin td {
+    padding: 10px;
+    border: 1px solid #ddd;
     vertical-align: middle;
-    padding: 12px;
 }
 
-.product-img {
-    width: 80px;
-    height: 80px;
-    object-fit: cover;
-    border-radius: 6px;
-    border: 2px solid #d20a0a;
+.table-admin th:nth-child(5),
+.table-admin td:nth-child(5) {
+    width: 120px;
+    text-align: center;
 }
 
-/* Botones */
+.table-admin img {
+    max-width: 100px;
+    max-height: 80px;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto;
+}
+
+/* Contenedor para los botones en la celda */
+.btn-group {
+    display: flex;
+    gap: 8px;          /* espacio entre botones */
+    justify-content: center;
+}
+
+/* Estilos generales para botones */
 .btn-admin {
-    font-family: 'Bebas Neue', sans-serif;
-    padding: 6px 16px;
-    border-radius: 4px;
-    text-transform: uppercase;
+    padding: 6px 12px;
+    white-space: nowrap;
+    cursor: pointer;
     font-size: 0.9rem;
-    letter-spacing: 1px;
-    transition: all 0.3s ease;
-    margin-right: 5px;
+    text-decoration: none;
+    border-radius: 4px;
     border: none;
-}
-
-.btn-edit {
-    background-color: #007bff;
     color: white;
+    display: inline-block;
+    text-align: center;
 }
 
-.btn-edit:hover {
-    background-color: #0056b3;
+/* Botones específicos */
+.btn-edit {
+    background-color: #4CAF50;
 }
 
 .btn-delete {
-    background-color: #d20a0a;
-    color: white;
+    background-color: #f44336;
 }
+
 
 .btn-delete:hover {
     background-color: #a10000;

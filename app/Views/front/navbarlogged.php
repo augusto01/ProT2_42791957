@@ -27,19 +27,19 @@
                 <li class="nav-item"><a class="nav-link" href="<?= site_url('ranking') ?>">Peleadores</a></li>
                 <li class="nav-item"><a class="nav-link" href="<?= site_url('ranking') ?>">Rankings</a></li>
                 <li class="nav-item"><a class="nav-link" href="<?= site_url('eventos') ?>">Eventos</a></li>
-                <li class="nav-item">
+
+                <?php if (session()->get('logged_in')): ?>
+                    <li class="nav-item">
                         <a class="nav-link" href="<?= site_url('tienda') ?>">Tienda</a>
                     </li>
 
-                <?php if (session()->get('logged_in') && session()->get('rol') === 'admin'): ?>
-                    <li class="nav-item">
-                        <a class="nav-link" href="<?= site_url('tienda') ?>">Tienda</a>
-                    </li>
-                    <li class="nav-item">
-                       <a class="nav-link" href="<?= site_url(session('rol') === 'admin' ? 'productos/admin' : 'productos') ?>">Articulos</a>
-                    </li>
+                    <?php if (session()->get('rol') === 'admin'): ?>
+                        <li class="nav-item">
+                            <a class="nav-link" href="<?= site_url('productos/admin') ?>">Artículos</a>
+                        </li>
+                    <?php endif; ?>
                 <?php endif; ?>
-            </ul>  
+            </ul>
 
             <div class="nav-item d-none d-lg-block">
                 <a class="navbar-brand logo-ufc" href="<?= site_url('/') ?>">                        

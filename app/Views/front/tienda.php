@@ -17,7 +17,7 @@
                     <div class="product-description"><?= esc($producto['descripcion']) ?></div>
                     <div class="product-price">$<?= number_format($producto['precio'], 2) ?></div>
 
-                    <img src="<?= base_url('uploads/' . $producto['foto']) ?>" alt="<?= esc($producto['nombre']) ?>" class="product-img">
+                    <img src="<?= base_url('public/uploads/' . $producto['foto']) ?>" alt="<?= esc($producto['nombre']) ?>" class="img-fluid" style="max-height: 200px; object-fit: cover;">
 
                     <div class="text-center mt-3">
                         <a href="#" class="btn-comprar">COMPRAR</a>
