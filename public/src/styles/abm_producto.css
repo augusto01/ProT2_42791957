@@ -1,0 +1,134 @@
+/* formulario.css */
+
+/* Importa Bebas Neue desde Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+body {
+    background-color: #121212;
+    color: #e0e0e0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 600px;
+    margin: 3rem auto;
+    padding: 2rem 2.5rem;
+    background-color: #1f1f1f;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(210, 10, 10, 0.7);
+}
+
+.section-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 3rem;
+    color: #d20a0a;
+    text-align: center;
+    margin-bottom: 2rem;
+    letter-spacing: 2px;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    font-size: 1.05rem;
+    color: #ff5252;
+    font-family: 'Bebas Neue', sans-serif;
+    letter-spacing: 1px;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="file"],
+textarea,
+select {
+    width: 100%;
+    padding: 0.6rem 1rem;
+    margin-bottom: 1.5rem;
+    background-color: #2a2a2a;
+    border: 2px solid #d20a0a;
+    border-radius: 8px;
+    color: #f5f5f5;
+    font-size: 1.1rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus,
+input[type="file"]:focus,
+textarea:focus,
+select:focus {
+    border-color: #ff4c4c;
+    outline: none;
+    box-shadow: 0 0 8px #ff4c4c;
+}
+
+textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+.btn-primary {
+    background-color: #d20a0a;
+    color: #fff;
+    border: none;
+    padding: 0.8rem 2rem;
+    border-radius: 10px;
+    font-weight: 700;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.4rem;
+    cursor: pointer;
+    transition: background-color 0.25s ease;
+    letter-spacing: 1.5px;
+    box-shadow: 0 4px 6px rgba(210, 10, 10, 0.6);
+    margin-right: 1rem;
+}
+
+.btn-primary:hover {
+    background-color: #ff4c4c;
+    box-shadow: 0 6px 12px rgba(255, 76, 76, 0.9);
+}
+
+.btn-secondary {
+    background-color: #444444;
+    color: #ddd;
+    border: none;
+    padding: 0.7rem 1.8rem;
+    border-radius: 10px;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.25s ease;
+    letter-spacing: 1.2px;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.4);
+    text-decoration: none;
+    display: inline-block;
+}
+
+.btn-secondary:hover {
+    background-color: #666666;
+    color: #fff;
+    box-shadow: 0 4px 10px rgba(102, 102, 102, 0.8);
+}
+
+.alert {
+    background-color: #3a1a1a;
+    border: 2px solid #d20a0a;
+    padding: 1rem 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+    color: #fbb;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 600;
+}
+
+ul {
+    padding-left: 1.4rem;
+}
+
+ul li {
+    margin-bottom: 0.4rem;
+}

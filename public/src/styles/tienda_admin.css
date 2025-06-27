@@ -31,7 +31,6 @@ body {
   font-family: 'Helvetica Neue', Arial, sans-serif;
   font-size: 0.9rem;
   color: #eee;
-  box-shadow: none;
 }
 
 .table-admin thead {
@@ -57,35 +56,32 @@ body {
   max-height: 80px;
   border-radius: 4px;
   object-fit: cover;
-  transition: border-color 0.3s ease;
 }
 
-.table-admin td img:hover {
-  border-color: #a10000;
-}
-
-
-/* Botones administración minimalistas */
+/* Botones administración con íconos */
 .btn-admin {
-  font-family: 'Helvetica Neue', Arial, sans-serif !important;
-  font-weight: 500;
-  font-size: 0.9rem;
-  padding: 6px 14px;
+  font-family: 'Bebas Neue', cursive, sans-serif !important;
+  font-size: 1rem;
+  padding: 8px 16px;
   border-radius: 4px;
   text-decoration: none;
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
   color: #fff;
-  transition: background-color 0.25s ease, transform 0.15s ease;
+  transition: all 0.25s ease;
   border: none;
   cursor: pointer;
   user-select: none;
-  margin-right: 8px;
-  box-shadow: none;
+  margin-right: 6px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
 /* Botones específicos */
 .btn-admin.btn-add {
   background-color: #d20a0a;
+  box-shadow: 0 0 10px #d20a0a55;
 }
 
 .btn-admin.btn-edit {
@@ -96,60 +92,200 @@ body {
   background-color: #a10000;
 }
 
-/* Hover simple */
-.btn-admin:hover,
-.btn-admin:focus {
+/* Hover */
+.btn-admin:hover {
   filter: brightness(90%);
-  transform: translateY(-1px);
+  transform: scale(1.02);
   outline: none;
 }
 
-/* Contenedor de botones (editar + eliminar) */
+/* Iconos estilo texto */
+.btn-admin .icon {
+  font-size: 1.1rem;
+}
+
+/* Contenedor de botones */
 .btn-group {
   display: flex;
   gap: 8px;
   flex-wrap: nowrap;
   align-items: center;
-  margin: 0; /* elimina margen adicional */
 }
 
-/* Formulario de búsqueda */
-form input[type="text"] {
-    width: 100%;
+/* Formulario de filtros */
+.filtro-form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.filtro-form input[type="text"],
+.filtro-form select {
     padding: 8px 12px;
-    font-family: 'Helvetica Neue', Arial, sans-serif;
     font-size: 1rem;
-    border: 1.5px solid #d20a0a;
-    border-radius: 4px 0 0 4px;
     background-color: #222;
     color: #eee;
-    transition: border-color 0.3s ease;
+    border: 1.5px solid #d20a0a;
+    border-radius: 4px;
+    min-width: 160px;
 }
 
-
-form input[type="text"]:focus {
+.filtro-form input[type="text"]:focus,
+.filtro-form select:focus {
     border-color: #a10000;
     outline: none;
 }
 
-form button.btn-delete {
+/* Botón buscar */
+.filtro-form button {
     background-color: #a10000;
-    border: none;
-    padding: 8px 16px;
-    border-radius: 0 4px 4px 0;
     color: #fff;
-    font-family: 'Helvetica Neue', Arial, sans-serif;
-    font-weight: 600;
+    font-family: 'Bebas Neue', cursive, sans-serif;
     font-size: 1rem;
+    letter-spacing: 1px;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    text-transform: uppercase;
     cursor: pointer;
-    transition: background-color 0.25s ease;
+    transition: all 0.25s ease;
 }
 
-form button.btn-delete:hover,
-form button.btn-delete:focus {
+.filtro-form button:hover {
     background-color: #d20a0a;
-    outline: none;
+    transform: scale(1.03);
 }
+
+/* Encabezado principal */
+.section-title {
+    font-family: 'Bebas Neue', cursive, sans-serif;
+    color: #d20a0a;
+    font-size: 2.4rem;
+    margin-bottom: 24px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    border-bottom: 2px solid #d20a0a;
+    padding-bottom: 8px;
+}
+
+/* Tabla administración */
+.table-admin {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #1a1a1a;
+  border: 2px solid #d20a0a33;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-top: 20px;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  font-size: 0.95rem;
+  color: #eee;
+  box-shadow: 0 0 10px #00000055;
+}
+
+/* Encabezados de tabla */
+.table-admin thead {
+  background-color: #d20a0a;
+  color: #fff;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.1rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  border-bottom: 2px solid #a10000;
+}
+
+.table-admin th {
+  padding: 14px 16px;
+  border-right: 1px solid #a10000;
+}
+
+.table-admin th:last-child {
+  border-right: none;
+}
+
+.table-admin td {
+  padding: 12px 15px;
+  border-bottom: 1px solid #333;
+  text-align: left;
+  vertical-align: middle;
+}
+
+/* Hover sobre filas */
+.table-admin tbody tr:hover {
+  background-color: #2a2a2a;
+}
+
+/* Imágenes */
+.table-admin td img {
+  max-height: 80px;
+  border-radius: 4px;
+  object-fit: cover;
+  border: 1px solid #d20a0a44;
+}
+
+/* Modal genérico */
+.modal-confirm {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  justify-content: center;
+  align-items: center;
+  font-family: 'Bebas Neue', sans-serif;
+}
+
+.modal-content {
+  background-color: #1a1a1a;
+  border: 2px solid #d20a0a;
+  padding: 24px;
+  border-radius: 8px;
+  text-align: center;
+  color: #eee;
+  animation: fadeIn 0.3s ease;
+  max-width: 400px;
+  width: 90%;
+}
+
+.modal-content p {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+}
+
+.btn-admin.btn-cancel {
+  background-color: #666;
+}
+
+.btn-admin.btn-cancel:hover {
+  background-color: #999;
+}
+
+/* Animación */
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+
+/* Responsive mejoras */
+@media (max-width: 768px) {
+  .table-admin th,
+  .table-admin td {
+    font-size: 0.85rem;
+    padding: 10px;
+  }
+}
+
 
 /* Responsive */
 @media (max-width: 768px) {
@@ -164,18 +300,20 @@ form button.btn-delete:focus {
         font-size: 0.85rem;
     }
 
-    form input[type="text"] {
-        max-width: 100%;
-    }
-    
-    form button.btn-delete {
-        padding: 7px 14px;
-        font-size: 0.9rem;
-    }
-    
     .btn-admin {
         font-size: 0.85rem;
-        padding: 5px 10px;
-        margin-right: 6px;
+        padding: 6px 12px;
+        gap: 4px;
+    }
+
+    .filtro-form {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .filtro-form input[type="text"],
+    .filtro-form select,
+    .filtro-form button {
+        width: 100%;
     }
 }

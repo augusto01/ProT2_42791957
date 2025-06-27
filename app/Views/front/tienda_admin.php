@@ -48,8 +48,28 @@
                             </td>
                             <td>
                                 <div class="btn-group">
-                                    <a href="<?= site_url('productos/editar/' . $producto['id']) ?>" class="btn-admin btn-edit">Editar</a>
-                                    <a href="<?= site_url('productos/eliminar/' . $producto['id']) ?>" class="btn-admin btn-delete" onclick="return confirm('¿Eliminar producto?')">Eliminar</a>
+                                    <a href="<?= site_url('productos/editar/' . $producto['id']) ?>" class="btn-admin btn-edit">
+                                        <span class="icon">✏️</span> Editar
+                                    </a>
+                                    <!-- Botón para abrir el modal -->
+                                        <button type="button" class="btn-admin btn-delete" onclick="document.getElementById('modal-<?= $producto['id'] ?>').style.display='flex'">
+                                            <span class="icon">🗑️</span> Eliminar
+                                        </button>
+
+                                        <!-- Modal de confirmación -->
+                                        <div id="modal-<?= $producto['id'] ?>" class="modal-confirm">
+                                            <div class="modal-content">
+                                                <p>¿Seguro que desea eliminar <strong><?= esc($producto['nombre']) ?></strong>?</p>
+                                                <div class="modal-actions">
+                                                    <a href="<?= site_url('productos/eliminar/' . $producto['id']) ?>" class="btn-admin btn-delete">
+                                                        <span class="icon">🗑️</span> Sí, eliminar
+                                                    </a>
+                                                    <button class="btn-admin btn-cancel" onclick="document.getElementById('modal-<?= $producto['id'] ?>').style.display='none'">Cancelar</button>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
                                 </div>
                             </td>
                         </tr>

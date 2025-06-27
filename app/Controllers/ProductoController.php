@@ -2,34 +2,42 @@
 
 use App\Models\ProductoModel;
 
+
+
 class ProductoController extends BaseController
 {
     public function tienda()
     {
         $model = new ProductoModel();
-        $productos = $model->where('activo', 1)->findAll();
+        $productos = $model->getProductosConRelaciones();
         return view('front/tienda', ['productos' => $productos]);
     }
 
-    public function tiendaAdmin()
+   public function tiendaAdmin()
     {
         if (!session()->get('logged_in') || session()->get('rol') !== 'admin') {
             return redirect()->to('/')->with('error', 'Acceso no autorizado');
         }
 
-        $model = new ProductoModel();
         $busqueda = $this->request->getGet('buscar');
 
+        $db = \Config\Database::connect();
+        $builder = $db->table('productos p');
+        $builder->select('p.*, c.nombre as categoria, t.nombre as talle');
+        $builder->join('categorias c', 'c.id = p.categoria_id');
+        $builder->join('talles t', 't.id = p.talle_id');
+        $builder->where('p.activo', 1);
+
         if ($busqueda) {
-            $productos = $model
-                ->like('nombre', $busqueda)
-                ->orLike('categoria', $busqueda)
-                ->orLike('talle', $busqueda)
-                ->where('activo', 1)
-                ->findAll();
-        } else {
-            $productos = $model->where('activo', 1)->findAll();
+            $builder->groupStart()
+                ->like('p.nombre', $busqueda)
+                ->orLike('c.nombre', $busqueda)
+                ->orLike('t.nombre', $busqueda)
+                ->orLike('p.descripcion', $busqueda)
+                ->groupEnd();
         }
+
+        $productos = $builder->get()->getResultArray();
 
         return view('front/tienda_admin', [
             'productos' => $productos,
@@ -37,14 +45,25 @@ class ProductoController extends BaseController
         ]);
     }
 
+
+
     public function crear()
     {
         if (!session()->get('logged_in') || session()->get('rol') !== 'admin') {
             return redirect()->to('/')->with('error', 'Acceso no autorizado');
         }
 
-        return view('front/producto_create');
+        $categoriaModel = new \App\Models\CategoriaModel();
+        $talleModel = new \App\Models\TalleModel();
+
+        return view('front/producto_create', [
+            'categorias' => $categoriaModel->findAll(),
+            'talles'     => $talleModel->findAll(),
+            'categoriaSeleccionada' => $this->request->getGet('categoria'),
+            'talleSeleccionado' => $this->request->getGet('talle')
+        ]);
     }
+
 
     public function guardar()
     {
@@ -54,12 +73,12 @@ class ProductoController extends BaseController
 
         $validation = \Config\Services::validation();
         $rules = [
-            'nombre' => 'required|min_length[3]',
-            'categoria' => 'required',
-            'talle' => 'required',
-            'descripcion' => 'required',
-            'precio' => 'required|decimal',
-            'foto'        => 'uploaded[foto]|mime_in[foto,image/jpeg,image/webp,image/avif]|max_size[foto,2048]',
+            'nombre'       => 'required|min_length[3]',
+            'categoria_id' => 'required|integer',
+            'talle_id'     => 'required|integer',
+            'descripcion'  => 'required',
+            'precio'       => 'required|decimal',
+            'foto'         => 'uploaded[foto]|mime_in[foto,image/jpeg,image/webp,image/avif]|max_size[foto,2048]',
         ];
 
         if (!$this->validate($rules)) {
@@ -71,13 +90,13 @@ class ProductoController extends BaseController
         $file->move(ROOTPATH . 'public/uploads', $newName);
 
         $data = [
-            'nombre' => $this->request->getPost('nombre'),
-            'categoria' => $this->request->getPost('categoria'),
-            'talle' => $this->request->getPost('talle'),
-            'descripcion' => $this->request->getPost('descripcion'),
-            'precio' => $this->request->getPost('precio'),
-            'foto' => $newName,
-            'activo' => 1,
+            'nombre'       => $this->request->getPost('nombre'),
+            'categoria_id' => $this->request->getPost('categoria_id'),
+            'talle_id'     => $this->request->getPost('talle_id'),
+            'descripcion'  => $this->request->getPost('descripcion'),
+            'precio'       => $this->request->getPost('precio'),
+            'foto'         => $newName,
+            'activo'       => 1,
         ];
 
         $model = new ProductoModel();
@@ -86,23 +105,32 @@ class ProductoController extends BaseController
         return redirect()->to('productos/admin')->with('success', 'Producto creado correctamente');
     }
 
+
     public function editar($id)
     {
         if (!session()->get('logged_in') || session()->get('rol') !== 'admin') {
             return redirect()->to('/')->with('error', 'Acceso no autorizado');
         }
 
-        $model = new ProductoModel();
+        $model = new \App\Models\ProductoModel();
         $producto = $model->find($id);
 
         if (!$producto) {
             return redirect()->to('productos/admin')->with('error', 'Producto no encontrado');
         }
 
-        return view('front/producto_edit', ['producto' => $producto]);
+        $categoriaModel = new \App\Models\CategoriaModel();
+        $talleModel = new \App\Models\TalleModel();
+
+        return view('front/producto_edit', [
+            'producto'   => $producto,
+            'categorias' => $categoriaModel->findAll(),
+            'talles'     => $talleModel->findAll(),
+        ]);
     }
 
-    public function actualizar($id)
+
+   public function actualizar($id)
     {
         if (!session()->get('logged_in') || session()->get('rol') !== 'admin') {
             return redirect()->to('/')->with('error', 'Acceso no autorizado');
@@ -115,12 +143,25 @@ class ProductoController extends BaseController
             return redirect()->to('productos/admin')->with('error', 'Producto no encontrado');
         }
 
+        $validation = \Config\Services::validation();
+        $rules = [
+            'nombre'       => 'required|min_length[3]',
+            'categoria_id' => 'required|integer',
+            'talle_id'     => 'required|integer',
+            'descripcion'  => 'required',
+            'precio'       => 'required|decimal',
+        ];
+
+        if (!$this->validate($rules)) {
+            return redirect()->back()->withInput()->with('errors', $validation->getErrors());
+        }
+
         $data = [
-            'nombre' => $this->request->getPost('nombre'),
-            'categoria' => $this->request->getPost('categoria'),
-            'talle' => $this->request->getPost('talle'),
-            'descripcion' => $this->request->getPost('descripcion'),
-            'precio' => $this->request->getPost('precio'),
+            'nombre'       => $this->request->getPost('nombre'),
+            'categoria_id' => $this->request->getPost('categoria_id'),
+            'talle_id'     => $this->request->getPost('talle_id'),
+            'descripcion'  => $this->request->getPost('descripcion'),
+            'precio'       => $this->request->getPost('precio'),
         ];
 
         $file = $this->request->getFile('foto');

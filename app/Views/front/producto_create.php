@@ -1,13 +1,13 @@
 <?= $this->include('front/navbarlogged') ?>
-<link rel="stylesheet" href="<?= base_url('public/src/styles/tienda_admin.css') ?>">
+<link rel="stylesheet" href="<?= base_url('public/src/styles/abm_producto.css') ?>">
 
-<section class="container py-5">
-    <h2 class="section-title">Agregar Nuevo Producto</h2>
+<div class="container py-5">
+    <h2 class="section-title">Agregar Producto</h2>
 
-    <?php if (session()->getFlashdata('errors')): ?>
+    <?php if (session('errors')): ?>
         <div class="alert alert-danger">
             <ul>
-                <?php foreach (session()->getFlashdata('errors') as $error): ?>
+                <?php foreach (session('errors') as $error): ?>
                     <li><?= esc($error) ?></li>
                 <?php endforeach; ?>
             </ul>
@@ -18,37 +18,50 @@
         <?= csrf_field() ?>
 
         <div class="mb-3">
-            <label for="nombre" class="form-label">Nombre:</label>
-            <input type="text" class="form-control" id="nombre" name="nombre" required>
+            <label for="nombre" class="form-label">Nombre</label>
+            <input type="text" name="nombre" class="form-control" value="<?= old('nombre') ?>" required>
         </div>
 
         <div class="mb-3">
-            <label for="categoria" class="form-label">Categoría:</label>
-            <input type="text" class="form-control" id="categoria" name="categoria" required>
+            <label for="categoria_id" class="form-label">Categoría</label>
+            <select name="categoria_id" class="form-select" required>
+                <option value="">Seleccionar</option>
+                <?php foreach ($categorias as $categoria): ?>
+                    <option value="<?= $categoria['id'] ?>" <?= old('categoria_id') == $categoria['id'] ? 'selected' : '' ?>>
+                        <?= esc($categoria['nombre']) ?>
+                    </option>
+                <?php endforeach; ?>
+            </select>
         </div>
 
         <div class="mb-3">
-            <label for="descripcion" class="form-label">Descripción:</label>
-            <textarea class="form-control" id="descripcion" name="descripcion" rows="3" required></textarea>
+            <label for="talle_id" class="form-label">Talle</label>
+            <select name="talle_id" class="form-select" required>
+                <option value="">Seleccionar</option>
+                <?php foreach ($talles as $talle): ?>
+                    <option value="<?= $talle['id'] ?>" <?= old('talle_id') == $talle['id'] ? 'selected' : '' ?>>
+                        <?= esc($talle['nombre']) ?>
+                    </option>
+                <?php endforeach; ?>
+            </select>
         </div>
 
         <div class="mb-3">
-            <label for="talle" class="form-label">Talle:</label>
-            <input type="text" class="form-control" id="talle" name="talle" required>
+            <label for="descripcion" class="form-label">Descripción</label>
+            <textarea name="descripcion" class="form-control" required><?= old('descripcion') ?></textarea>
         </div>
 
         <div class="mb-3">
             <label for="precio" class="form-label">Precio</label>
-            <input type="number" step="0.01" name="precio" id="precio" class="form-control" required value="<?= old('precio') ?>">
+            <input type="number" name="precio" step="0.01" class="form-control" value="<?= old('precio') ?>" required>
         </div>
-
 
         <div class="mb-3">
-            <label for="foto" class="form-label">Foto:</label>
-            <input type="file" class="form-control" id="foto" name="foto" required>
+            <label for="foto" class="form-label">Foto</label>
+            <input type="file" name="foto" class="form-control" required>
         </div>
 
-        <button type="submit" class="btn-admin btn-add">Guardar Producto</button>
-        <a href="<?= site_url('productos/admin') ?>" class="btn-admin btn-delete">Cancelar</a>
+        <button type="submit" class="btn btn-primary">Guardar</button>
+        <a href="<?= site_url('productos/admin') ?>" class="btn btn-secondary">Cancelar</a>
     </form>
-</section>
+</div>
