@@ -1,5 +1,3 @@
-
-//REGISTRAR USUARIO 
 document.getElementById("registro-form").addEventListener("submit", async (e) => {
   e.preventDefault();
   limpiarAlertas();
@@ -7,6 +5,7 @@ document.getElementById("registro-form").addEventListener("submit", async (e) =>
   // Obtener valores
   const nombre = document.getElementById("nombre").value.trim();
   const apellido = document.getElementById("apellido").value.trim();
+  const username = document.getElementById("username").value.trim();
   const email = document.getElementById("email").value.trim();
   const password = document.getElementById("password").value;
   const terminos = document.getElementById("terminos").checked;
@@ -15,6 +14,7 @@ document.getElementById("registro-form").addEventListener("submit", async (e) =>
   const errores = [];
   if (!nombre) errores.push("El nombre es obligatorio.");
   if (!apellido) errores.push("El apellido es obligatorio.");
+  if (!username) errores.push("El nombre de usuario es obligatorio.");
   if (!email) errores.push("El correo electrónico es obligatorio.");
   else if (!/^\S+@\S+\.\S+$/.test(email)) errores.push("El correo electrónico no es válido.");
   if (!password) errores.push("La contraseña es obligatoria.");
@@ -27,7 +27,14 @@ document.getElementById("registro-form").addEventListener("submit", async (e) =>
   }
 
   // Si pasa validación, enviar datos
-  const datos = { nombre, apellido, email, password };
+  const datos = { 
+    nombre, 
+    apellido, 
+    username, 
+    email, 
+    password,  
+    rol_id: 2 // cliente por defecto
+  };
 
   try {
     const response = await fetch("http://localhost/ProT2_42791957/api/registro", {
@@ -36,11 +43,15 @@ document.getElementById("registro-form").addEventListener("submit", async (e) =>
       body: JSON.stringify(datos),
     });
 
-
     const responseData = await response.json();
 
     if (!response.ok) {
       const errorMsg = responseData.message || "Algo salió mal al registrar.";
+
+      //debugging
+      console.log("Datos a enviar:", datos);
+      console.log("JSON stringify:", JSON.stringify(datos));
+
       if (errorMsg.toLowerCase().includes("usuario ya existe") || errorMsg.toLowerCase().includes("email ya está registrado")) {
         mostrarErrores(["El usuario o correo ya está registrado."]);
       } else if (errorMsg.toLowerCase().includes("contraseña") && errorMsg.toLowerCase().includes("más de 6 caracteres")) {
@@ -68,7 +79,7 @@ function mostrarErrores(errores) {
   
   errores.forEach(error => {
     const div = document.createElement("div");
-    div.className = "alerta-error"; // Usar className en lugar de classList
+    div.className = "alerta-error";
     div.textContent = error;
     div.style.opacity = "1"; // Forzar visibilidad
     contenedor.appendChild(div);

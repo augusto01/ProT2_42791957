@@ -47,7 +47,7 @@ class ProductoController extends BaseController
 
         $productos = $query->findAll();
 
-        return view('front/tienda_admin', [
+        return view('front/productos/tienda_admin', [
             'productos' => $productos,
             'buscar' => $buscar,
             'categorias' => $categoriaModel->findAll(),
@@ -71,7 +71,7 @@ class ProductoController extends BaseController
         $categoriaModel = new \App\Models\CategoriaModel();
         $talleModel = new \App\Models\TalleModel();
 
-        return view('front/producto_create', [
+        return view('front/productos/producto_create', [
             'categorias' => $categoriaModel->findAll(),
             'talles'     => $talleModel->findAll(),
             'categoriaSeleccionada' => $this->request->getGet('categoria'),
@@ -138,7 +138,7 @@ class ProductoController extends BaseController
         $categoriaModel = new \App\Models\CategoriaModel();
         $talleModel = new \App\Models\TalleModel();
 
-        return view('front/producto_edit', [
+        return view('front/productos/producto_edit', [
             'producto'   => $producto,
             'categorias' => $categoriaModel->findAll(),
             'talles'     => $talleModel->findAll(),

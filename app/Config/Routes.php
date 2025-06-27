@@ -52,6 +52,29 @@ $routes->group('', ['namespace' => 'App\Controllers'], function($routes) {
     // Guardar producto nuevo (POST)
     $routes->post('productos/guardar', 'ProductoController::guardar');
 
+//================================RUTAS DE USUARIOS====================================
+
+    // Listar usuarios (página principal admin usuarios)
+    $routes->get('usuarios/admin', 'UsuariosController::admin');
+
+    // Mostrar formulario para crear usuario
+    $routes->get('usuarios/crear', 'UsuariosController::crear');
+
+    // Guardar nuevo usuario (POST)
+    $routes->post('usuarios/guardar', 'UsuariosController::guardar');
+
+    // Mostrar formulario para editar usuario
+    $routes->get('usuarios/editar/(:num)', 'UsuariosController::editar/$1');
+
+    // Actualizar usuario (POST)
+    $routes->post('usuarios/actualizar/(:num)', 'UsuariosController::actualizar/$1');
+
+    // Eliminar usuario
+    $routes->get('usuarios/eliminar/(:num)', 'UsuariosController::eliminar/$1');
+
+
+
+
 
 
 

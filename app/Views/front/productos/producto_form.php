@@ -1,5 +1,6 @@
 <?= $this->include('front/layout/header') ?>
 
+
 <div class="container mt-4">
     <h2 class="text-center mb-4">Subir nuevo producto</h2>
 

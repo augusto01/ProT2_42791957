@@ -25,10 +25,11 @@
             </div>
 
             <div class="mb-3">
-                <label for="email" class="form-label">Email address</label>
-                <input type="email" class="form-control" id="email" name="email" required>
-                <div id="emailHelp" class="form-text">Nunca compartiremos tu correo con nadie más.</div>
+                <label for="login" class="form-label">Email o Nombre de Usuario</label>
+                <input type="text" class="form-control" id="login" name="login" required>
+                <div id="loginHelp" class="form-text">Ingresa tu email o tu nombre de usuario.</div>
             </div>
+
 
             <div class="mb-3">
                 <label for="password" class="form-label">Password</label>

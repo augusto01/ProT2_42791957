@@ -40,6 +40,10 @@
                 <input type="text" class="form-control" id="apellido" placeholder="Tu apellido">
             </div>
             <div class="mb-3">
+                <label for="username" class="form-label">Username</label>
+                <input type="text" class="form-control" id="username" placeholder="Nickname">
+            </div>
+            <div class="mb-3">
                 <label for="email" class="form-label">Correo electrónico</label>
                 <input type="email" class="form-control" id="email" placeholder="nombre@ejemplo.com">
             </div>
