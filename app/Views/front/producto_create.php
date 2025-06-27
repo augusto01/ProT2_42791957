@@ -60,8 +60,10 @@
             <label for="foto" class="form-label">Foto</label>
             <input type="file" name="foto" class="form-control" required>
         </div>
-
-        <button type="submit" class="btn btn-primary">Guardar</button>
-        <a href="<?= site_url('productos/admin') ?>" class="btn btn-secondary">Cancelar</a>
+        
+        <div class="text-center">
+            <button type="submit" class="btn btn-primary">Guardar</button>
+            <a href="<?= site_url('productos/admin') ?>" class="btn btn-secondary">Cancelar</a>
+        </div>    
     </form>
 </div>
