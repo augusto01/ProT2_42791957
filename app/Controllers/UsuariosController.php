@@ -27,9 +27,11 @@ class UsuariosController extends Controller
         $buscar = $this->request->getGet('buscar');
         $rolSeleccionado = $this->request->getGet('rol');
 
-        // Construir consulta con filtros
+        // Construir consulta con filtros solo trae los usuarios activos
         $builder = $usuarioModel->select('usuarios.*, roles.tipo_usuario')
-                                ->join('roles', 'roles.id = usuarios.rol_id');
+                        ->join('roles', 'roles.id = usuarios.rol_id')
+                        ->where('usuarios.activo', 1);
+
 
         if ($buscar) {
             $builder->groupStart()
@@ -168,15 +170,27 @@ class UsuariosController extends Controller
     }
 
     // Eliminar usuario
-    public function eliminar($id = null)
+    public function eliminar($id)
     {
-        $usuario = $this->usuarioModel->find($id);
+        $usuarioModel = new \App\Models\UsuarioModel();
+
+        // Verificar si existe usuario
+        $usuario = $usuarioModel->find($id);
         if (!$usuario) {
-            throw \CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound("Usuario no encontrado");
+            return redirect()->back()->with('error', 'Usuario no encontrado');
         }
 
-        $this->usuarioModel->delete($id);
+        // Datos a actualizar para baja lógica
+        $datos = ['activo' => 0];
 
-        return redirect()->to('usuarios/admin')->with('success', 'Usuario eliminado correctamente.');
+        // Actualizar usuario
+        if ($usuarioModel->update($id, $datos)) {
+            return redirect()->to(site_url('usuarios/admin'))->with('success', 'Usuario desactivado correctamente');
+        } else {
+            return redirect()->back()->with('error', 'No se pudo desactivar el usuario');
+        }
     }
+
+
+
 }

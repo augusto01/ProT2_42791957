@@ -5,7 +5,7 @@ use CodeIgniter\Model;
 class UsuarioModel extends Model {
     protected $table = 'usuarios';
     protected $primaryKey = 'id';
-    protected $allowedFields = ['nombre', 'apellido', 'username', 'email', 'password', 'rol_id'];
+    protected $allowedFields = ['nombre', 'apellido', 'username', 'email', 'password', 'rol_id', 'activo'];
     protected $useTimestamps = true;
 
     /**
