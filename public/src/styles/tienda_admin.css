@@ -286,6 +286,65 @@ body {
   }
 }
 
+.input-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.input-group input[type="text"] {
+  flex: 1;
+  border-radius: 4px 0 0 4px;
+}
+
+.input-group button {
+  border-radius: 0 4px 4px 0;
+}
+
+.input-group select {
+  background-color: #1a1a1a;
+  color: #eee;
+  border: 1px solid #d20a0a;
+  border-radius: 4px;
+  padding: 6px 10px;
+  font-family: 'Bebas Neue', sans-serif;
+}
+
+.btn-admin.btn-red {
+    background-color: #d20a0a;
+    color: white;
+    border: none;
+}
+
+.btn-admin.btn-red:hover {
+    background-color: #a10000;
+}
+
+
+.input-group select:focus {
+  outline: none;
+  border-color: #a10000;
+}
+
+.table-admin td.precio {
+    color: #00d26a; /* verde intenso */
+    font-weight: bold;
+}
+
+td.precio, th.precio {
+  color: #00cc66;
+  font-weight: bold;
+}
+
+
+.table-admin th:nth-child(5) {
+    color: white
+}
+
+
+
 
 /* Responsive */
 @media (max-width: 768px) {

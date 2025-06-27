@@ -8,12 +8,34 @@
     <div class="table-responsive">
 
         <!-- Formulario de búsqueda -->
-        <form method="get" class="mb-4">
+        <form method="get" class="filtro-form" id="form-filtros">
             <div class="input-group">
-                <input type="text" name="buscar" class="form-control" placeholder="Buscar producto..." value="<?= esc($buscar ?? '') ?>">
-                <button class="btn-admin btn-delete" type="submit">Buscar</button>
+                <input type="text" name="buscar" class="form-control" placeholder="Buscar por nombre..." value="<?= esc($buscar ?? '') ?>">
+
+                <!-- Filtros de categoría y talle -->
+                <select name="categoria" class="form-select" onchange="document.getElementById('form-filtros').submit()">
+                    <option value="">Todas las categorías</option>
+                    <?php foreach ($categorias as $categoria): ?>
+                        <option value="<?= $categoria['id'] ?>" <?= ($categoriaSeleccionada == $categoria['id']) ? 'selected' : '' ?>>
+                            <?= esc($categoria['nombre']) ?>
+                        </option>
+                    <?php endforeach; ?>
+                </select>
+
+                <select name="talle" class="form-select" onchange="document.getElementById('form-filtros').submit()">
+                    <option value="">Todos los talles</option>
+                    <?php foreach ($talles as $talle): ?>
+                        <option value="<?= $talle['id'] ?>" <?= ($talleSeleccionado == $talle['id']) ? 'selected' : '' ?>>
+                            <?= esc($talle['nombre']) ?>
+                        </option>
+                    <?php endforeach; ?>
+                </select>
+
+                <button type="submit" class="btn-admin btn-red">Buscar</button>
             </div>
         </form>
+
+
 
         <!-- Botón de agregar producto -->
         <a href="<?= site_url('productos/crear') ?>" class="btn-admin btn-add mb-3">Agregar Producto</a>
@@ -25,7 +47,7 @@
                     <th>Categoría</th>
                     <th>Descripción</th>
                     <th>Talle</th>
-                    <th>Precio</th>
+                    <th class="precio">Precio</th>
                     <th>Foto</th>
                     <th>Acciones</th>
                 </tr>
@@ -38,7 +60,7 @@
                             <td><?= esc($producto['categoria']) ?></td>
                             <td><?= esc($producto['descripcion']) ?></td>
                             <td><?= esc($producto['talle']) ?></td>
-                            <td>$<?= esc(number_format($producto['precio'], 2, ',', '.')) ?></td>
+                            <td class="precio">$<?= esc(number_format($producto['precio'], 2, ',', '.')) ?></td>
                             <td>
                                 <?php if (!empty($producto['foto'])): ?>
                                     <img src="<?= base_url('public/uploads/' . $producto['foto']) ?>" alt="<?= esc($producto['nombre']) ?>" class="img-fluid" style="max-height: 150px; object-fit: cover;">

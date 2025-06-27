@@ -1,6 +1,8 @@
 <?php namespace App\Controllers;
 
 use App\Models\ProductoModel;
+use App\Models\CategoriaModel;
+use App\Models\TalleModel;
 
 
 
@@ -15,35 +17,47 @@ class ProductoController extends BaseController
 
    public function tiendaAdmin()
     {
-        if (!session()->get('logged_in') || session()->get('rol') !== 'admin') {
-            return redirect()->to('/')->with('error', 'Acceso no autorizado');
+        $productoModel = new ProductoModel();
+        $categoriaModel = new CategoriaModel();
+        $talleModel = new TalleModel();
+
+        // Obtener filtros desde GET
+        $buscar = $this->request->getGet('buscar');
+        $categoriaId = $this->request->getGet('categoria');
+        $talleId = $this->request->getGet('talle');
+
+        // Construcción de la consulta
+        $query = $productoModel
+            ->select('productos.*, categorias.nombre as categoria, talles.nombre as talle')
+            ->join('categorias', 'categorias.id = productos.categoria_id')
+            ->join('talles', 'talles.id = productos.talle_id')
+            ->where('productos.activo', 1); // solo productos activos
+
+        if ($buscar) {
+            $query->like('productos.nombre', $buscar);
         }
 
-        $busqueda = $this->request->getGet('buscar');
-
-        $db = \Config\Database::connect();
-        $builder = $db->table('productos p');
-        $builder->select('p.*, c.nombre as categoria, t.nombre as talle');
-        $builder->join('categorias c', 'c.id = p.categoria_id');
-        $builder->join('talles t', 't.id = p.talle_id');
-        $builder->where('p.activo', 1);
-
-        if ($busqueda) {
-            $builder->groupStart()
-                ->like('p.nombre', $busqueda)
-                ->orLike('c.nombre', $busqueda)
-                ->orLike('t.nombre', $busqueda)
-                ->orLike('p.descripcion', $busqueda)
-                ->groupEnd();
+        if ($categoriaId) {
+            $query->where('productos.categoria_id', $categoriaId);
         }
 
-        $productos = $builder->get()->getResultArray();
+        if ($talleId) {
+            $query->where('productos.talle_id', $talleId);
+        }
+
+        $productos = $query->findAll();
 
         return view('front/tienda_admin', [
             'productos' => $productos,
-            'buscar' => $busqueda
+            'buscar' => $buscar,
+            'categorias' => $categoriaModel->findAll(),
+            'talles' => $talleModel->findAll(),
+            'categoriaSeleccionada' => $categoriaId,
+            'talleSeleccionado' => $talleId
         ]);
     }
+
+
 
 
 
@@ -53,6 +67,7 @@ class ProductoController extends BaseController
             return redirect()->to('/')->with('error', 'Acceso no autorizado');
         }
 
+        // Instanciar modelos
         $categoriaModel = new \App\Models\CategoriaModel();
         $talleModel = new \App\Models\TalleModel();
 
@@ -63,6 +78,7 @@ class ProductoController extends BaseController
             'talleSeleccionado' => $this->request->getGet('talle')
         ]);
     }
+
 
 
     public function guardar()
