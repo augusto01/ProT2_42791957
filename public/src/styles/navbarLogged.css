@@ -3,3 +3,27 @@
     font-weight: bold;
     margin-right: 10px;
 }
+
+/* Aumentar altura del navbar */
+.navbar {
+  min-height: 90px; /* ajusta según tamaño de tu logo */
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  position: relative;
+}
+
+/* Espaciado en los bloques laterales */
+.navbar-nav {
+  flex-direction: row;
+  gap: 1rem;
+  align-items: center;
+}
+
+/* Ajustar opciones absolutas izquierda/derecha */
+.navbar-nav.position-absolute {
+  margin-top: 10px; /* separa del logo */
+}
+
+.navbar .navbar-brand img {
+  max-height: 60px; /* asegura que no se pase del navbar */
+}

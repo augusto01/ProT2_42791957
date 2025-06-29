@@ -83,6 +83,8 @@ nav ul li a {
         hue-rotate(320deg);
 }
 
+
+
 /* Elimina cualquier filtro inicial que pueda interferir */
 .navbar-brand.logo-ufc img {
     filter: none !important;
@@ -120,4 +122,36 @@ nav ul li a {
     .navbar-toggler {
         order: 1; /* Botón hamburguesa después del logo */
     }
+}
+/* Estilo general del navbar */
+.navbar {
+  min-height: 100px; /* asegura suficiente alto para el logo centrado */
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  position: relative;
+}
+
+/* Estilo general del navbar */
+.navbar {
+  min-height: 100px; /* asegura suficiente alto para el logo centrado */
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  position: relative;
+}
+
+/* Asegura que los nav-items estén bien alineados horizontalmente */
+.navbar-nav {
+  flex-direction: row;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* Logo centrado (absoluto) para no logueados */
+.navbar .logo-ufc img {
+  max-height: 60px;
+}
+
+/* Asegura que el logo no tape las opciones */
+.navbar .position-absolute {
+  z-index: 1;
 }
